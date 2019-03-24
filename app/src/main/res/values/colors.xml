@@ -3,4 +3,8 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="uncheck">#dcdcdc</color>
+    <color name="uncheck_dark">#707070</color>
+    <color name="main">#09462b</color>
+    <color name="tag">#f4f4f4</color>
 </resources>
