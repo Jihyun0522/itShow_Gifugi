@@ -161,7 +161,7 @@
                 android:layout_marginTop="5dp"
                 android:text="ㅇㅇㅇ"
                 android:textColor="@color/main"
-                android:textSize="25dp" />
+                android:textSize="22dp" />
 
             <TextView
                 android:id="@+id/s_id_user"
@@ -169,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:text=" id"
                 android:textColor="@color/uncheck"
-                android:textSize="15dp" />
+                android:textSize="12dp" />
 
             <LinearLayout
                 android:id="@+id/s_keep"
@@ -190,7 +190,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="보관함"
                     android:textColor="#000000"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
@@ -234,7 +234,7 @@
                         android:layout_marginLeft="20dp"
                         android:text="축제"
                         android:textColor="#000000"
-                        android:textSize="17dp" />
+                        android:textSize="14dp" />
 
                 </LinearLayout>
 
@@ -245,7 +245,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="봄"
                     android:textColor="@color/uncheck"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:id="@+id/s_festival_summer"
@@ -254,7 +254,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="여름"
                     android:textColor="@color/uncheck"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:id="@+id/s_festival_fall"
@@ -263,7 +263,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="가을"
                     android:textColor="@color/uncheck"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:id="@+id/s_festival_winter"
@@ -272,7 +272,7 @@
                     android:layout_marginLeft="10dp"
                     android:text="겨울"
                     android:textColor="@color/uncheck"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
@@ -294,7 +294,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="관광"
                     android:textColor="#000000"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
@@ -317,7 +317,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="숙박"
                     android:textColor="#000000"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
@@ -340,7 +340,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="음식"
                     android:textColor="#000000"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
@@ -372,7 +372,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="공지사항"
                     android:textColor="#000000"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
@@ -395,7 +395,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="문의"
                     android:textColor="#000000"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
 
@@ -418,7 +418,7 @@
                     android:layout_marginLeft="20dp"
                     android:text="설정"
                     android:textColor="#000000"
-                    android:textSize="17dp" />
+                    android:textSize="14dp" />
 
             </LinearLayout>
         </LinearLayout>
