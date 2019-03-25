@@ -43,7 +43,7 @@
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/noting"
                     android:text="HOME"
-                    android:textColor="@color/main"
+                    android:textColor="@color/uncheck"
                     android:textSize="15dp" />
 
                 <Button
@@ -55,7 +55,7 @@
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/noting"
                     android:text="CATEGORY"
-                    android:textColor="@color/uncheck"
+                    android:textColor="@color/main"
                     android:textSize="15dp" />
 
             </LinearLayout>
@@ -81,44 +81,211 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_001"
-            android:layout_marginTop="10dp">
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="90dp">
 
-            <TextView
-                android:id="@+id/season"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
-                android:gravity="center"
-                android:text=""
-                android:textColor="@color/uncheck_dark"
-                android:textSize="55dp" />
+                android:background="@drawable/under_line">
 
-            <TextView
-                android:id="@+id/today"
-                android:layout_width="100dp"
-                android:layout_height="20dp"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="CATEGORY"
+                    android:textColor="@color/uncheck"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="75dp"
-                android:gravity="center"
-                android:text=""
-                android:textColor="@color/uncheck_dark"
-                android:textSize="15dp" />
+                android:layout_marginTop="35dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/c_festival"
+                    android:layout_width="80dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="35dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/on_festival"/>
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="FESTIVAL"
+                        android:textColor="#000"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/c_sightseeing"
+                    android:layout_width="80dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="70dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/on_sightseeing"/>
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="EXPERIENCE"
+                        android:textColor="#000"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:orientation="horizontal"
+                android:background="@drawable/under_line">
+
+                <LinearLayout
+                    android:id="@+id/c_stay"
+                    android:layout_width="80dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/on_stay"/>
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:text="HOTEL"
+                        android:textColor="#000"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/c_food"
+                    android:layout_width="80dp"
+                    android:layout_height="90dp"
+                    android:layout_marginLeft="70dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/on_food"/>
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:text="FOOD"
+                        android:textColor="#000"
+                        android:textSize="10dp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="240dp"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="RECOMMEND"
+                    android:textColor="@color/uncheck"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="300dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="270dp"
+                android:layout_marginBottom="20dp"
+                android:layout_centerHorizontal="true">
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ImageButton
+                            android:id="@+id/category_1"
+                            android:layout_width="140dp"
+                            android:layout_height="180dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/r_gifucastle"/>
+
+                        <ImageButton
+                            android:id="@+id/category_2"
+                            android:layout_width="140dp"
+                            android:layout_height="180dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/r_ropeway"/>
+
+                        <ImageButton
+                            android:layout_width="140dp"
+                            android:layout_height="180dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/r_gifucastle"/>
+
+                        <ImageButton
+                            android:layout_width="140dp"
+                            android:layout_height="180dp"
+                            android:layout_margin="10dp"
+                            android:background="@drawable/r_ropeway"/>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+            </RelativeLayout>
 
         </RelativeLayout>
 
-        <ImageView
-            android:layout_width="330dp"
-            android:layout_height="430dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="45dp"
-            android:src="@drawable/card2" />
-
-    </RelativeLayout><!--배경이 될 Layout-->
+    </RelativeLayout>
+    <!--배경이 될 Layout-->
 
     <!--드로어 화면이 될 Layout-->
     <RelativeLayout

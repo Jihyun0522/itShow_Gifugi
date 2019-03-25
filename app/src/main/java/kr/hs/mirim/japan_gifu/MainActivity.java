@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private Boolean isMenuShow = false;
     private Boolean isExitFlag = false;
 
-    private String getTime(){
+    private String getTime() {
         mFormat = new SimpleDateFormat("yyyy.MM.dd");
 
         mNow = System.currentTimeMillis();
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         return mFormat.format(mDate);
     }
 
-    private int getMonth(){
+    private int getMonth() {
         int m = 0;
         mFormat = new SimpleDateFormat("MM");
 
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
         // 드로어 화면을 열고 닫을 버튼 객체 참조
         ImageButton btnOpenDrawer = (ImageButton) findViewById(R.id.btn_OpenDrawer);
-        Button btnCloseDrawer = (Button) findViewById(R.id.btn_CloseDrawer);
+        ImageButton btnCloseDrawer = (ImageButton) findViewById(R.id.btn_CloseDrawer);
 
         // 드로어 여는 버튼 리스너
         btnOpenDrawer.setOnClickListener(new View.OnClickListener() {
@@ -87,43 +87,51 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        Today=(TextView)findViewById(R.id.today);
+        Today = (TextView) findViewById(R.id.today);
         Today.setText(getTime());
 
-        season = (TextView)findViewById(R.id.season);
-        category = (Button)findViewById(R.id.btn_category);
+        season = (TextView) findViewById(R.id.season);
+        category = (Button) findViewById(R.id.btn_category);
         context = this;
 
-        switch (getMonth()){
-            case 3: case 4: case 5:
+        switch (getMonth()) {
+            case 3:
+            case 4:
+            case 5:
                 season.setText("春");
                 break;
 
-            case 6: case 7: case 8:
+            case 6:
+            case 7:
+            case 8:
                 season.setText("夏");
                 break;
 
-            case 9: case 10: case 11:
+            case 9:
+            case 10:
+            case 11:
                 season.setText("秋");
                 break;
 
-            case 12: case 1: case 2:
+            case 12:
+            case 1:
+            case 2:
                 season.setText("冬");
                 break;
         }
 
-//        category.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(context, category.class);
-//                startActivity(intent);
-//                overridePendingTransition(0, 0);
-//
-//                finish();
-//            }
-//        });
-//
-//        search = (ImageButton)findViewById(R.id.btn_search);
+        category.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, category.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+
+                finish();
+            }
+        });
+
+        // search = (ImageButton)findViewById(R.id.btn_search);
 //
 //        search.setOnClickListener(new View.OnClickListener() {
 //            @Override
