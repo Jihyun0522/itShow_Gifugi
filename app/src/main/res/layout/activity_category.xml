@@ -316,8 +316,8 @@
         <LinearLayout
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="80dp"
             android:background="@drawable/under_line"
             android:orientation="vertical">
 
@@ -354,7 +354,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:text="보관함"
                     android:textColor="#000000"
                     android:textSize="14dp" />
@@ -372,8 +372,8 @@
         <LinearLayout
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="190dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="200dp"
             android:background="@drawable/under_line"
             android:orientation="vertical">
 
@@ -398,7 +398,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="15dp"
                         android:text="축제"
                         android:textColor="#000000"
                         android:textSize="14dp" />
@@ -418,7 +418,7 @@
                     android:id="@+id/s_festival_summer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:text="여름"
                     android:textColor="@color/uncheck"
                     android:textSize="14dp" />
@@ -427,7 +427,7 @@
                     android:id="@+id/s_festival_fall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:text="가을"
                     android:textColor="@color/uncheck"
                     android:textSize="14dp" />
@@ -436,7 +436,7 @@
                     android:id="@+id/s_festival_winter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
                     android:text="겨울"
                     android:textColor="@color/uncheck"
                     android:textSize="14dp" />
@@ -458,7 +458,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:text="관광"
                     android:textColor="#000000"
                     android:textSize="14dp" />
@@ -481,7 +481,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:text="숙박"
                     android:textColor="#000000"
                     android:textSize="14dp" />
@@ -504,7 +504,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:text="음식"
                     android:textColor="#000000"
                     android:textSize="14dp" />
@@ -516,8 +516,8 @@
         <LinearLayout
             android:layout_width="240dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="400dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="410dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -536,7 +536,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:text="공지사항"
                     android:textColor="#000000"
                     android:textSize="14dp" />
@@ -559,7 +559,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:text="문의"
                     android:textColor="#000000"
                     android:textSize="14dp" />
@@ -582,7 +582,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="15dp"
                     android:text="설정"
                     android:textColor="#000000"
                     android:textSize="14dp" />
