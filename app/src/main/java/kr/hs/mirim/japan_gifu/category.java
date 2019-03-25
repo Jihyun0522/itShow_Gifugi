@@ -20,11 +20,27 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class category extends AppCompatActivity {
+    Context context;
+    Button home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+
+        home = findViewById(R.id.btn_home);
+        context = this;
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, MainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+
+                finish();
+            }
+        });
 
         // 전체화면인 DrawerLayout 객체 참조
         final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
