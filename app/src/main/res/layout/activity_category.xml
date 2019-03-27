@@ -22,10 +22,10 @@
 
             <ImageButton
                 android:id="@+id/btn_OpenDrawer"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="15dp"
+                android:layout_marginLeft="25dp"
                 android:background="@drawable/menu" />
 
             <LinearLayout
@@ -44,7 +44,7 @@
                     android:background="@drawable/noting"
                     android:text="HOME"
                     android:textColor="@color/uncheck"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
 
                 <Button
                     android:id="@+id/btn_category"
@@ -56,7 +56,7 @@
                     android:background="@drawable/noting"
                     android:text="CATEGORY"
                     android:textColor="@color/main"
-                    android:textSize="15dp" />
+                    android:textSize="13dp" />
 
             </LinearLayout>
 
@@ -67,12 +67,12 @@
 
                 <ImageButton
                     android:id="@+id/btn_search"
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="25dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginRight="25dp"
                     android:background="@drawable/search" />
 
             </RelativeLayout>
@@ -128,7 +128,7 @@
                         android:gravity="center"
                         android:text="FESTIVAL"
                         android:textColor="#000"
-                        android:textSize="10dp"/>
+                        android:textSize="11dp"/>
 
                 </LinearLayout>
 
@@ -152,7 +152,7 @@
                         android:gravity="center"
                         android:text="EXPERIENCE"
                         android:textColor="#000"
-                        android:textSize="10dp"/>
+                        android:textSize="11dp"/>
 
                 </LinearLayout>
 
@@ -188,7 +188,7 @@
                         android:layout_marginTop="5dp"
                         android:text="HOTEL"
                         android:textColor="#000"
-                        android:textSize="10dp"/>
+                        android:textSize="11dp"/>
 
                 </LinearLayout>
 
@@ -213,7 +213,7 @@
                         android:layout_marginTop="10dp"
                         android:text="FOOD"
                         android:textColor="#000"
-                        android:textSize="10dp"/>
+                        android:textSize="11dp"/>
 
                 </LinearLayout>
 
@@ -303,12 +303,12 @@
 
             <ImageButton
                 android:id="@+id/btn_CloseDrawer"
-                android:layout_width="15dp"
+                android:layout_width="10dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginTop="20dp"
-                android:layout_marginRight="15dp"
+                android:layout_marginRight="20dp"
                 android:background="@drawable/cancel" />
 
         </RelativeLayout>
@@ -336,7 +336,7 @@
                 android:layout_height="wrap_content"
                 android:text=" id"
                 android:textColor="@color/uncheck"
-                android:textSize="12dp" />
+                android:textSize="13dp" />
 
             <LinearLayout
                 android:id="@+id/s_keep"
@@ -347,17 +347,17 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/keep" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="13dp"
                     android:text="보관함"
                     android:textColor="#000000"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
             </LinearLayout>
 
@@ -398,10 +398,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="13dp"
                         android:text="축제"
                         android:textColor="#000000"
-                        android:textSize="14dp" />
+                        android:textSize="13dp" />
 
                 </LinearLayout>
 
@@ -409,37 +409,37 @@
                     android:id="@+id/s_festival_spring"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="30dp"
                     android:text="봄"
                     android:textColor="@color/uncheck"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/s_festival_summer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:text="여름"
                     android:textColor="@color/uncheck"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/s_festival_fall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:text="가을"
                     android:textColor="@color/uncheck"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/s_festival_winter"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="20dp"
                     android:text="겨울"
                     android:textColor="@color/uncheck"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
             </LinearLayout>
 
@@ -458,10 +458,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="13dp"
                     android:text="관광"
                     android:textColor="#000000"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
             </LinearLayout>
 
@@ -481,10 +481,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="13dp"
                     android:text="숙박"
                     android:textColor="#000000"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
             </LinearLayout>
 
@@ -504,10 +504,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="13dp"
                     android:text="음식"
                     android:textColor="#000000"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
             </LinearLayout>
 
@@ -529,17 +529,17 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/inform" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="13dp"
                     android:text="공지사항"
                     android:textColor="#000000"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
             </LinearLayout>
 
@@ -552,17 +552,17 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/ask" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="13dp"
                     android:text="문의"
                     android:textColor="#000000"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
             </LinearLayout>
 
@@ -575,17 +575,17 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:background="@drawable/setup" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginLeft="13dp"
                     android:text="설정"
                     android:textColor="#000000"
-                    android:textSize="14dp" />
+                    android:textSize="13dp" />
 
             </LinearLayout>
         </LinearLayout>
