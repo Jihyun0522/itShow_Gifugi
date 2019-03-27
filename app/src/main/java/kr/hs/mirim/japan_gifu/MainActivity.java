@@ -131,16 +131,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // search = (ImageButton)findViewById(R.id.btn_search);
-//
-//        search.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(context, search.class);
-//                startActivity(intent);
-//                overridePendingTransition(0, 0);
-//            }
-//        });
+        search = (ImageButton)findViewById(R.id.btn_search);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, search.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
     }
 
 }

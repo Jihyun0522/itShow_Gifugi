@@ -83,7 +83,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="100dp">
+            android:layout_marginTop="90dp">
 
             <RelativeLayout
                 android:layout_width="300dp"
@@ -236,7 +236,7 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_width="300dp"
+                android:layout_width="320dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="280dp"
                 android:layout_marginBottom="20dp"

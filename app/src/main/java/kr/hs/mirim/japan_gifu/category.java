@@ -23,6 +23,8 @@ public class category extends AppCompatActivity {
     Context context;
     Button home;
 
+    ImageButton search;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,16 @@ public class category extends AppCompatActivity {
             }
         });
 
+        search = (ImageButton)findViewById(R.id.btn_search);
+
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, search.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
 
     }
 
