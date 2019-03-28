@@ -7,7 +7,7 @@
 
     <!--드로어 화면이 될 Layout-->
     <RelativeLayout
-        android:id="@+id/drawer"
+        android:id="@+id/drawer_menu"
         android:layout_width="300dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
