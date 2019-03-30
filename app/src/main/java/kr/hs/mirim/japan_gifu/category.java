@@ -45,7 +45,7 @@ public class category extends AppCompatActivity {
         });
 
         // 전체화면인 DrawerLayout 객체 참조
-        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.c_drawerLayout);
 
         // Drawer 화면(뷰) 객체 참조
         final View drawerView = (View) findViewById(R.id.drawer);

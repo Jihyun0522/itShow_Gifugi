@@ -31,11 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton search;
 
-    private String TAG = "HOME";
-
-    private Boolean isMenuShow = false;
-    private Boolean isExitFlag = false;
-
+    //날짜 표시
     private String getTime() {
         mFormat = new SimpleDateFormat("yyyy.MM.dd");
 
@@ -44,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         return mFormat.format(mDate);
     }
 
+    //오늘의 달
     private int getMonth() {
         int m = 0;
         mFormat = new SimpleDateFormat("MM");
@@ -60,15 +57,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // 전체화면인 DrawerLayout 객체 참조
-        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
+        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.m_drawerLayout);
 
         // Drawer 화면(뷰) 객체 참조
-        final View drawerView = (View) findViewById(R.id.drawer);
+        final View drawerView = (View) findViewById(R.id.drawer_menu);
 
         // 드로어 화면을 열고 닫을 버튼 객체 참조
-        ImageButton btnOpenDrawer = (ImageButton) findViewById(R.id.btn_OpenDrawer);
-        ImageButton btnCloseDrawer = (ImageButton) findViewById(R.id.btn_CloseDrawer);
+        ImageButton btnOpenDrawer = (ImageButton) findViewById(R.id.opendrawer);
+        ImageButton btnCloseDrawer = (ImageButton) findViewById(R.id.closedrawer);
 
         // 드로어 여는 버튼 리스너
         btnOpenDrawer.setOnClickListener(new View.OnClickListener() {
@@ -86,14 +82,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         Today = (TextView) findViewById(R.id.today);
         Today.setText(getTime());
 
         season = (TextView) findViewById(R.id.season);
         category = (Button) findViewById(R.id.btn_category);
+        search = (ImageButton)findViewById(R.id.btn_search);
         context = this;
 
+        //봄, 여름, 가을, 겨울에 따라 한자 출력
         switch (getMonth()) {
             case 3:
             case 4:
@@ -130,8 +127,6 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        search = (ImageButton)findViewById(R.id.btn_search);
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
