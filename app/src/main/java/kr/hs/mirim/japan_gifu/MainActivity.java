@@ -31,6 +31,12 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton search;
 
+    DrawerLayout drawerLayout;
+    View drawerView;
+
+    ImageButton buttonOpenDrawer;
+    ImageButton buttonCloseDrawer;
+
     //날짜 표시
     private String getTime() {
         mFormat = new SimpleDateFormat("yyyy.MM.dd");
@@ -57,28 +63,26 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.m_drawerLayout);
-
-        // Drawer 화면(뷰) 객체 참조
-        final View drawerView = (View) findViewById(R.id.drawer_menu);
-
-        // 드로어 화면을 열고 닫을 버튼 객체 참조
-        ImageButton btnOpenDrawer = (ImageButton) findViewById(R.id.opendrawer);
-        ImageButton btnCloseDrawer = (ImageButton) findViewById(R.id.closedrawer);
+        //메인 화면
+        drawerLayout = (DrawerLayout) findViewById(R.id.m_drawerLayout);
+        //drawer 참조
+        drawerView = (View) findViewById(R.id.drawer_menu);
 
         // 드로어 여는 버튼 리스너
-        btnOpenDrawer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        buttonOpenDrawer = (ImageButton) findViewById(R.id.opendrawer);
+        buttonOpenDrawer.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
                 drawerLayout.openDrawer(drawerView);
             }
         });
 
         // 드로어 닫는 버튼 리스너
-        btnCloseDrawer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.closeDrawer(drawerView);
+        buttonCloseDrawer = (ImageButton) findViewById(R.id.closedrawer);
+        buttonCloseDrawer.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                drawerLayout.closeDrawers();
             }
         });
 
@@ -87,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
 
         season = (TextView) findViewById(R.id.season);
         category = (Button) findViewById(R.id.btn_category);
-        search = (ImageButton)findViewById(R.id.btn_search);
+        search = (ImageButton) findViewById(R.id.btn_search);
         context = this;
 
         //봄, 여름, 가을, 겨울에 따라 한자 출력

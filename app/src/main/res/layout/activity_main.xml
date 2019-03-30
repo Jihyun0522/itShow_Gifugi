@@ -121,6 +121,7 @@
     <!--배경이 될 Layout-->
 
     <!--드로어 화면이 될 Layout-->
+    <include layout="@layout/activity_drawer"/>
     <!--드로어 화면이 될 Layout-->
 
 </android.support.v4.widget.DrawerLayout>

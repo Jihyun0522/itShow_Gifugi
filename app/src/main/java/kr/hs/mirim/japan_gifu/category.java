@@ -25,10 +25,39 @@ public class category extends AppCompatActivity {
 
     ImageButton search;
 
+    DrawerLayout drawerLayout;
+    View drawerView;
+
+    ImageButton buttonOpenDrawer;
+    ImageButton buttonCloseDrawer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+
+        //메인 화면
+        drawerLayout = (DrawerLayout) findViewById(R.id.c_drawerLayout);
+        //drawer 참조
+        drawerView = (View) findViewById(R.id.drawer_menu);
+
+        // 드로어 여는 버튼 리스너
+        buttonOpenDrawer = (ImageButton) findViewById(R.id.opendrawer);
+        buttonOpenDrawer.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                drawerLayout.openDrawer(drawerView);
+            }
+        });
+
+        // 드로어 닫는 버튼 리스너
+        buttonCloseDrawer = (ImageButton) findViewById(R.id.closedrawer);
+        buttonCloseDrawer.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View arg0) {
+                drawerLayout.closeDrawers();
+            }
+        });
 
         home = findViewById(R.id.btn_home);
         context = this;
@@ -41,32 +70,6 @@ public class category extends AppCompatActivity {
                 overridePendingTransition(0, 0);
 
                 finish();
-            }
-        });
-
-        // 전체화면인 DrawerLayout 객체 참조
-        final DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.c_drawerLayout);
-
-        // Drawer 화면(뷰) 객체 참조
-        final View drawerView = (View) findViewById(R.id.drawer);
-
-        // 드로어 화면을 열고 닫을 버튼 객체 참조
-        ImageButton btnOpenDrawer = (ImageButton) findViewById(R.id.btn_OpenDrawer);
-        ImageButton btnCloseDrawer = (ImageButton) findViewById(R.id.btn_CloseDrawer);
-
-        // 드로어 여는 버튼 리스너
-        btnOpenDrawer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.openDrawer(drawerView);
-            }
-        });
-
-        // 드로어 닫는 버튼 리스너
-        btnCloseDrawer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.closeDrawer(drawerView);
             }
         });
 
