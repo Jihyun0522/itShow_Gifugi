@@ -5,7 +5,7 @@
     android:id="@+id/c_drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".category">
 
     <!--배경이 될 Layout-->
     <RelativeLayout
@@ -21,7 +21,7 @@
             android:background="@drawable/under_line">
 
             <ImageButton
-                android:id="@+id/btn_OpenDrawer"
+                android:id="@+id/opendrawer"
                 android:layout_width="18dp"
                 android:layout_height="18dp"
                 android:layout_centerVertical="true"
