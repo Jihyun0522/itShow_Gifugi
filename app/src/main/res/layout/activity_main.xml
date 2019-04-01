@@ -14,81 +14,21 @@
         android:layout_alignParentTop="true"
         android:background="@drawable/under_line">
 
-        <RelativeLayout
-            android:id="@+id/rl_001"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/under_line">
-
-            <ImageButton
-                android:id="@+id/opendrawer"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="25dp"
-                android:background="@drawable/menu" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true">
-
-                <Button
-                    android:id="@+id/btn_home"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/noting"
-                    android:text="HOME"
-                    android:textColor="@color/main"
-                    android:textSize="14dp" />
-
-                <Button
-                    android:id="@+id/btn_category"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginBottom="5dp"
-                    android:background="@drawable/noting"
-                    android:text="CATEGORY"
-                    android:textColor="@color/uncheck"
-                    android:textSize="14dp" />
-
-            </LinearLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true">
-
-                <ImageButton
-                    android:id="@+id/btn_search"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginRight="25dp"
-                    android:background="@drawable/search" />
-
-            </RelativeLayout>
-
-        </RelativeLayout>
+        <include
+            android:id="@+id/top"
+            layout="@layout/top_menu"/>
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/rl_001">
+            android:layout_below="@+id/top">
 
             <TextView
                 android:id="@+id/season"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:text=""
                 android:textColor="@color/uncheck_dark"
@@ -99,7 +39,7 @@
                 android:layout_width="100dp"
                 android:layout_height="20dp"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="75dp"
+                android:layout_marginTop="80dp"
                 android:gravity="center"
                 android:text=""
                 android:textColor="@color/uncheck_dark"

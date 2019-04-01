@@ -3,6 +3,7 @@ package kr.hs.mirim.japan_gifu;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import java.util.Date;
 public class category extends AppCompatActivity {
     Context context;
     Button home;
+    Button category;
 
     ImageButton search;
 
@@ -60,6 +62,9 @@ public class category extends AppCompatActivity {
                 drawerLayout.closeDrawers();
             }
         });
+
+        category = findViewById(R.id.btn_category);
+        category.setTextColor(ContextCompat.getColor(this, R.color.main));
 
         home = findViewById(R.id.btn_home);
         context = this;

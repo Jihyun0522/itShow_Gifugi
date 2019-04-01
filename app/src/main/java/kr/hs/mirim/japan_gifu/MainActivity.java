@@ -3,6 +3,7 @@ package kr.hs.mirim.japan_gifu;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     Button category;
     Context context;
-
+    Button home;
     ImageButton search;
 
     DrawerLayout drawerLayout;
@@ -89,10 +90,13 @@ public class MainActivity extends AppCompatActivity {
         Today = (TextView) findViewById(R.id.today);
         Today.setText(getTime());
 
+        home = (Button)findViewById(R.id.btn_home);
         season = (TextView) findViewById(R.id.season);
         category = (Button) findViewById(R.id.btn_category);
         search = (ImageButton) findViewById(R.id.btn_search);
         context = this;
+
+        home.setTextColor(ContextCompat.getColor(this, R.color.main));
 
         //봄, 여름, 가을, 겨울에 따라 한자 출력
         switch (getMonth()) {
