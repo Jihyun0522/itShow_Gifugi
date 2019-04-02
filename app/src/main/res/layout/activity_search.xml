@@ -71,7 +71,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:text="   다카야마   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="#ffffff"
                 android:background="@drawable/oval_search"/>
 
@@ -85,7 +85,7 @@
                 android:layout_toLeftOf="@+id/search_main"
                 android:layout_centerVertical="true"
                 android:text="   겨울   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -99,7 +99,7 @@
                 android:layout_toLeftOf="@+id/search_l1"
                 android:layout_centerVertical="true"
                 android:text="   축제   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -113,7 +113,7 @@
                 android:layout_toRightOf="@+id/search_main"
                 android:layout_centerVertical="true"
                 android:text="   온천   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -127,7 +127,7 @@
                 android:layout_toRightOf="@+id/search_r1"
                 android:layout_centerVertical="true"
                 android:text="   게로   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -165,7 +165,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:text="   체험   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -179,7 +179,7 @@
                 android:layout_toLeftOf="@+id/search_t_c1"
                 android:layout_centerVertical="true"
                 android:text="   축제   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -193,7 +193,7 @@
                 android:layout_toLeftOf="@+id/search_t_l1"
                 android:layout_centerVertical="true"
                 android:text="   음식   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -207,7 +207,7 @@
                 android:layout_toRightOf="@+id/search_t_c1"
                 android:layout_centerVertical="true"
                 android:text="   숙박   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -221,7 +221,7 @@
                 android:layout_toRightOf="@+id/search_t_r1"
                 android:layout_centerVertical="true"
                 android:text="   쇼핑   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -250,7 +250,7 @@
                     android:layout_gravity="center"
                     android:layout_marginRight="4dp"
                     android:text="   정적인   "
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textColor="@color/tag"
                     android:background="@drawable/oval_back"/>
 
@@ -262,7 +262,7 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="4dp"
                     android:text="   붐비는   "
-                    android:textSize="12dp"
+                    android:textSize="14dp"
                     android:textColor="@color/tag"
                     android:background="@drawable/oval_back"/>
 
@@ -278,7 +278,7 @@
                 android:layout_toLeftOf="@+id/search_t_c2"
                 android:layout_centerVertical="true"
                 android:text="   활동적인   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
@@ -292,7 +292,7 @@
                 android:layout_toRightOf="@+id/search_t_c2"
                 android:layout_centerVertical="true"
                 android:text="   한적한   "
-                android:textSize="12dp"
+                android:textSize="14dp"
                 android:textColor="@color/tag"
                 android:background="@drawable/oval_back"/>
 
