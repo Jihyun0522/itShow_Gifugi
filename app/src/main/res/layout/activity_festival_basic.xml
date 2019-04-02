@@ -4,21 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".festival_basic"
     android:background="#fff"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".festival_basic">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@drawable/under_line">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/back_category"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
+            <ImageButton
+                android:id="@+id/btn_menu"
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/cancel" />
 
-        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:text="FESTIVAL"
+                android:textColor="@color/main"
+                android:textSize="13dp" />
+
+        </RelativeLayout>
 
         <ImageButton
             android:id="@+id/btn_search"
@@ -29,6 +46,73 @@
             android:layout_marginTop="25dp"
             android:layout_marginRight="25dp"
             android:background="@drawable/search" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <Switch
+            android:id="@+id/festival_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="50dp"
+            android:track="@drawable/switch_selector"
+            android:thumb="@drawable/switch_thumb"
+            android:textOn="list"
+            android:textOff="card"
+            android:textColor="#fff"/>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <LinearLayout
+            android:id="@+id/f_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/f_spring"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/f_center"
+                android:background="@drawable/on_spring" />
+            
+            <ImageButton
+                android:id="@+id/f_summer"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/un_summer" />
+
+
+            <ImageButton
+                android:id="@+id/f_fall"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/un_fall" />
+
+
+            <ImageButton
+                android:id="@+id/f_winter"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/f_center"
+                android:background="@drawable/un_winter" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

@@ -16,6 +16,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class category extends AppCompatActivity {
     Button category;
 
     ImageButton search;
+    LinearLayout festival;
 
     DrawerLayout drawerLayout;
     View drawerView;
@@ -86,6 +88,17 @@ public class category extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, search.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        festival = findViewById(R.id.c_festival);
+
+        festival.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, festival_basic.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
