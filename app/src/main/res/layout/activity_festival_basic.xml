@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".festival_basic">
 
+    <!-- 메뉴 분리하고 싶다... -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -48,6 +49,7 @@
             android:background="@drawable/search" />
 
     </RelativeLayout>
+    <!-- 메뉴 분리하고 싶다... -->
 
     <RelativeLayout
         android:layout_width="match_parent"
