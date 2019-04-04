@@ -92,7 +92,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
 
             <ImageButton
                 android:id="@+id/f_spring"
@@ -129,5 +130,7 @@
         </LinearLayout>
 
     </RelativeLayout>
+
+    <include layout="@layout/festival_list"/>
 
 </LinearLayout>
