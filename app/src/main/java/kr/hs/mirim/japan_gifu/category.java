@@ -37,10 +37,13 @@ public class category extends AppCompatActivity {
     ImageButton buttonOpenDrawer;
     ImageButton buttonCloseDrawer;
 
+    LinearLayout s_festival;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
+        context = this;
 
         //메인 화면
         drawerLayout = (DrawerLayout) findViewById(R.id.c_drawerLayout);
@@ -69,8 +72,6 @@ public class category extends AppCompatActivity {
         category.setTextColor(ContextCompat.getColor(this, R.color.main));
 
         home = findViewById(R.id.btn_home);
-        context = this;
-
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,7 +84,6 @@ public class category extends AppCompatActivity {
         });
 
         search = (ImageButton)findViewById(R.id.btn_search);
-
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,11 +94,22 @@ public class category extends AppCompatActivity {
         });
 
         festival = findViewById(R.id.c_festival);
-
         festival.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "category");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        s_festival = findViewById(R.id.s_festival);
+        s_festival.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "category");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }

@@ -14,6 +14,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
 
     ImageButton buttonOpenDrawer;
     ImageButton buttonCloseDrawer;
+
+    LinearLayout s_festival;
 
     //날짜 표시
     private String getTime() {
@@ -90,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
         Today = (TextView) findViewById(R.id.today);
         Today.setText(getTime());
 
-        home = (Button)findViewById(R.id.btn_home);
+        home = (Button) findViewById(R.id.btn_home);
         season = (TextView) findViewById(R.id.season);
         category = (Button) findViewById(R.id.btn_category);
         search = (ImageButton) findViewById(R.id.btn_search);
@@ -144,6 +147,17 @@ public class MainActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             }
         });
-    }
 
+        s_festival = (LinearLayout) findViewById(R.id.s_festival);
+        s_festival.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+
+        });
+    }
 }
