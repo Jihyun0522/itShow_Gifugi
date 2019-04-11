@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     ImageButton buttonCloseDrawer;
 
     LinearLayout s_festival;
+    TextView s_festival_spring;
 
     //날짜 표시
     private String getTime() {
@@ -153,11 +154,21 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, festival_basic.class);
-                intent.putExtra("activity", "main");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
 
+        });
+
+        s_festival_spring = (TextView) findViewById(R.id.s_festival_spring);
+        s_festival_spring.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, festival_basic.class);
+                intent.putExtra("season", "spring");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
         });
     }
 }
