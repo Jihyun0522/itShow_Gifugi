@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".festival_basic"></activity>
+        <activity android:name=".basic_menu"></activity>
+        <activity android:name=".festival_basic" />
         <activity android:name=".search" />
         <activity android:name=".category" />
         <activity android:name=".MainActivity">
