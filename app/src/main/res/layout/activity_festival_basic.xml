@@ -93,10 +93,10 @@
 
     </RelativeLayout>
 
-    <include layout="@layout/festival_list"
+    <include layout="@layout/category_list"
         android:visibility="visible"/>
 
-    <include layout="@layout/festival_card"
+    <include layout="@layout/category_card"
         android:visibility="invisible"/>
 
 </LinearLayout>
