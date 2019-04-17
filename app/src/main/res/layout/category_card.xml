@@ -6,7 +6,7 @@
 
     <!-- 수직 방향 스크롤을 위한 스크롤 뷰 -->
     <ScrollView
-        android:id="@+id/f_card_view"
+        android:id="@+id/card_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 

@@ -5,10 +5,15 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class festival_basic extends AppCompatActivity {
     Context context;
@@ -17,6 +22,10 @@ public class festival_basic extends AppCompatActivity {
 
     TextView menu_text;
     RelativeLayout back;
+
+    Switch aSwitch;
+    ScrollView card_view;
+    ListView list_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,5 +63,23 @@ public class festival_basic extends AppCompatActivity {
                 finish();
             }
         });
+
+        aSwitch = findViewById(R.id.festival_switch);
+        card_view = findViewById(R.id.card_view);
+        list_view = findViewById(R.id.list_view);
+
+        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked == true){
+                    card_view.setVisibility(View.INVISIBLE);
+                    list_view.setVisibility(View.GONE);
+                } else {
+                    card_view.setVisibility(View.GONE);
+                    list_view.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
     }
 }
