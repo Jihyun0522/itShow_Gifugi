@@ -5,8 +5,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.ScrollView;
+import android.widget.Switch;
 import android.widget.TextView;
 
 public class basic_menu extends AppCompatActivity {
@@ -18,6 +22,10 @@ public class basic_menu extends AppCompatActivity {
     RelativeLayout back;
 
     String menu;
+
+    Switch aSwitch;
+    ScrollView card_view;
+    ListView list_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +76,23 @@ public class basic_menu extends AppCompatActivity {
                 overridePendingTransition(0, 0);
 
                 finish();
+            }
+        });
+
+        aSwitch = findViewById(R.id.basic_switch);
+        card_view = findViewById(R.id.card_view);
+        list_view = findViewById(R.id.list_view);
+
+        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked == true){
+                    card_view.setVisibility(View.INVISIBLE);
+                    list_view.setVisibility(View.GONE);
+                } else {
+                    card_view.setVisibility(View.GONE);
+                    list_view.setVisibility(View.INVISIBLE);
+                }
             }
         });
     }
