@@ -39,11 +39,15 @@ public class category extends AppCompatActivity {
 
     LinearLayout s_festival;
 
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         context = this;
+
+        final String intent_Season = intent.getStringExtra("season");
 
         //메인 화면
         drawerLayout = (DrawerLayout) findViewById(R.id.c_drawerLayout);
@@ -75,7 +79,7 @@ public class category extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, MainActivity.class);
+                intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
@@ -87,7 +91,7 @@ public class category extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, search.class);
+                intent = new Intent(context, search.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -97,8 +101,9 @@ public class category extends AppCompatActivity {
         festival.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, festival_basic.class);
+                intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
+                intent.putExtra("season", intent_Season);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -108,8 +113,9 @@ public class category extends AppCompatActivity {
         s_festival.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, festival_basic.class);
+                intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
+                intent.putExtra("season", intent_Season);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
