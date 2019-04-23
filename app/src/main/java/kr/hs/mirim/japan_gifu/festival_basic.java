@@ -68,6 +68,7 @@ public class festival_basic extends AppCompatActivity {
         card_view = findViewById(R.id.card_view);
         list_view = findViewById(R.id.list_view);
 
+        //화면 전환이 제대로 되지 않음.
         aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {

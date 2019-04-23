@@ -135,6 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
+        //앱이 강제 종료되는 것 같음. 확인필요
         category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
