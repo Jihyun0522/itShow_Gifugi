@@ -63,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
         return m;
     }
 
-    String intent_Season = "";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,32 +108,29 @@ public class MainActivity extends AppCompatActivity {
             case 4:
             case 5:
                 season.setText("春");
-                intent_Season = "spring";
                 break;
 
             case 6:
             case 7:
             case 8:
                 season.setText("夏");
-                intent_Season = "summer";
                 break;
 
             case 9:
             case 10:
             case 11:
                 season.setText("秋");
-                intent_Season = "fall";
                 break;
 
             case 12:
             case 1:
             case 2:
                 season.setText("冬");
-                intent_Season = "winter";
                 break;
         }
 
-        //앱이 강제 종료되는 것 같음. 확인필요
+        //계절 intent를 제거했더니 앱이 강제종료가 되지 않음,
+        //그러나 계절 넘기는 게 필요
         category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -161,7 +156,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, festival_basic.class);
-                intent.putExtra("season", intent_Season);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }

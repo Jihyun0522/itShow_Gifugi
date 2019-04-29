@@ -47,8 +47,6 @@ public class category extends AppCompatActivity {
         setContentView(R.layout.activity_category);
         context = this;
 
-        final String intent_Season = intent.getStringExtra("season");
-
         //메인 화면
         drawerLayout = (DrawerLayout) findViewById(R.id.c_drawerLayout);
         //drawer 참조
@@ -103,7 +101,6 @@ public class category extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
-                intent.putExtra("season", intent_Season);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -115,7 +112,6 @@ public class category extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
-                intent.putExtra("season", intent_Season);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
