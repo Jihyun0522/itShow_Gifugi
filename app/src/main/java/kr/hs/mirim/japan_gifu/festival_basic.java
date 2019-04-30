@@ -23,9 +23,9 @@ public class festival_basic extends AppCompatActivity {
     TextView menu_text;
     RelativeLayout back;
 
-    Switch aSwitch;
-    ScrollView card_view;
-    ListView list_view;
+    Switch changeLayout;
+    LinearLayout card_view;
+    LinearLayout list_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,23 +64,26 @@ public class festival_basic extends AppCompatActivity {
             }
         });
 
-        aSwitch = findViewById(R.id.festival_switch);
+        changeLayout = (Switch)findViewById(R.id.festival_switch);
         card_view = findViewById(R.id.card_view);
         list_view = findViewById(R.id.list_view);
 
-        //화면 전환이 제대로 되지 않음.
-        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        //화면 전환 성공
+        changeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == true){
-                    card_view.setVisibility(View.INVISIBLE);
-                    list_view.setVisibility(View.GONE);
-                } else {
-                    card_view.setVisibility(View.GONE);
-                    list_view.setVisibility(View.INVISIBLE);
-                }
+            public void onClick(View v) {
+                CheckState();
             }
         });
 
     }
+
+    private void CheckState(){
+        if (changeLayout.isChecked()){
+            card_view.setVisibility(card_view.VISIBLE);
+        } else {
+            card_view.setVisibility(card_view.GONE);
+        }
+    }
+
 }
