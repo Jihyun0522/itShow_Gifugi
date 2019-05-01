@@ -30,6 +30,9 @@ public class category extends AppCompatActivity {
 
     ImageButton search;
     LinearLayout festival;
+    LinearLayout sightseeing;
+    LinearLayout stay;
+    LinearLayout food;
 
     DrawerLayout drawerLayout;
     View drawerView;
@@ -106,6 +109,43 @@ public class category extends AppCompatActivity {
             }
         });
 
+        sightseeing = findViewById(R.id.c_sightseeing);
+        sightseeing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("activity", "category");
+                intent.putExtra("menu_type", "sightseeing");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        stay = findViewById(R.id.c_stay);
+        stay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("activity", "category");
+                intent.putExtra("menu_type", "stay");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        food = findViewById(R.id.c_stay);
+        food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("activity", "category");
+                intent.putExtra("menu_type", "food");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        //drawer menu
         s_festival = findViewById(R.id.s_festival);
         s_festival.setOnClickListener(new View.OnClickListener() {
             @Override

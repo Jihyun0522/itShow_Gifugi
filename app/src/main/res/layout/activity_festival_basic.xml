@@ -93,8 +93,9 @@
 
     </RelativeLayout>
 
-    <include layout="@layout/category_list"/>
+    <include layout="@layout/category_card"
+        android:visibility="gone"/>
 
-    <include layout="@layout/category_card"/>
+    <include layout="@layout/category_list" />
 
 </LinearLayout>

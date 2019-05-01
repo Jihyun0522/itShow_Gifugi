@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -23,9 +24,9 @@ public class basic_menu extends AppCompatActivity {
 
     String menu;
 
-    Switch aSwitch;
-    ScrollView card_view;
-    ListView list_view;
+    Switch changeLayout;
+    LinearLayout card_view;
+    LinearLayout list_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,21 +80,25 @@ public class basic_menu extends AppCompatActivity {
             }
         });
 
-        aSwitch = findViewById(R.id.basic_switch);
+        changeLayout = (Switch)findViewById(R.id.festival_switch);
         card_view = findViewById(R.id.card_view);
         list_view = findViewById(R.id.list_view);
 
-        aSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        //화면 전환 성공
+        changeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked == true){
-                    card_view.setVisibility(View.INVISIBLE);
-                    list_view.setVisibility(View.GONE);
-                } else {
-                    card_view.setVisibility(View.GONE);
-                    list_view.setVisibility(View.INVISIBLE);
-                }
+            public void onClick(View v) {
+                CheckState();
             }
         });
     }
+
+    private void CheckState(){
+        if (changeLayout.isChecked()){
+            card_view.setVisibility(card_view.VISIBLE);
+        } else {
+            card_view.setVisibility(card_view.GONE);
+        }
+    }
+
 }
