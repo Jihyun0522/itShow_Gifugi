@@ -32,6 +32,7 @@ public class basic_menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_basic_menu);
+        context = this;
 
         Intent intent = getIntent();
         menu = intent.getStringExtra("menu_type");
@@ -67,11 +68,15 @@ public class basic_menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = getIntent();
-                String activity = intent.getExtras().getString("activity");
-                if (activity.equals("category")) {
-                    intent = new Intent(context, category.class);
-                } else if(activity.equals("main")){
-                    intent = new Intent(context, MainActivity.class);
+                String activity = intent.getStringExtra("activity");
+                switch (activity){
+                    case "main" :
+                        intent = new Intent(context, MainActivity.class);
+                        break;
+
+                    case "category" :
+                        intent = new Intent(context, category.class);
+                        break;
                 }
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -80,7 +85,7 @@ public class basic_menu extends AppCompatActivity {
             }
         });
 
-        changeLayout = (Switch)findViewById(R.id.festival_switch);
+        changeLayout = (Switch)findViewById(R.id.basic_switch);
         card_view = findViewById(R.id.card_view);
         list_view = findViewById(R.id.list_view);
 

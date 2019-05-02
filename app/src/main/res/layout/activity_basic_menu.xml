@@ -45,10 +45,9 @@
 
     </LinearLayout>
 
-    <include layout="@layout/category_list"
-        android:visibility="visible"/>
-
     <include layout="@layout/category_card"
-        android:visibility="invisible"/>
+        android:visibility="gone"/>
+
+    <include layout="@layout/category_list" />
 
 </LinearLayout>

@@ -41,6 +41,14 @@ public class MainActivity extends AppCompatActivity {
 
     LinearLayout s_festival;
     TextView s_festival_spring;
+    TextView s_festival_summer;
+    TextView s_festival_fall;
+    TextView s_festival_winter;
+    LinearLayout s_sightseeing;
+    LinearLayout s_stay;
+    LinearLayout s_food;
+
+    Intent intent;
 
     //날짜 표시
     private String getTime() {
@@ -134,7 +142,7 @@ public class MainActivity extends AppCompatActivity {
         category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, category.class);
+                intent = new Intent(context, category.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
@@ -145,29 +153,99 @@ public class MainActivity extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, search.class);
+                intent = new Intent(context, search.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
         });
 
-        s_festival = (LinearLayout) findViewById(R.id.s_festival);
+        //drawer menu
+        s_festival = findViewById(R.id.s_festival);
         s_festival.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, festival_basic.class);
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
-
         });
 
-        s_festival_spring = (TextView) findViewById(R.id.s_festival_spring);
+        s_festival_spring = findViewById(R.id.s_festival_spring);
         s_festival_spring.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, festival_basic.class);
-                intent.putExtra("season", "spring");
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        s_festival_summer = findViewById(R.id.s_festival_summer);
+        s_festival_summer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        s_festival_fall = findViewById(R.id.s_festival_fall);
+        s_festival_fall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        s_festival_winter = findViewById(R.id.s_festival_winter);
+        s_festival_winter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        s_sightseeing = findViewById(R.id.s_sightseeing);
+        s_sightseeing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("activity", "main");
+                intent.putExtra("menu_type", "sightseeing");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        s_stay = findViewById(R.id.s_stay);
+        s_stay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("activity", "main");
+                intent.putExtra("menu_type", "stay");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        s_food = findViewById(R.id.s_food);
+        s_food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("activity", "main");
+                intent.putExtra("menu_type", "food");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
