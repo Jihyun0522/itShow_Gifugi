@@ -47,6 +47,7 @@
 
         </RelativeLayout>
 
+        <!-- 사진 레이아웃을 따로 만드는 것을 고민 -->
         <ImageView
             android:layout_width="330dp"
             android:layout_height="430dp"
