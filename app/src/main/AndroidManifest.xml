@@ -26,6 +26,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".first"></activity>
+        <activity android:name=".login"></activity>
+        <activity android:name=".signup"></activity>
         <activity android:name=".basic_menu"></activity>
         <activity android:name=".festival_basic" />
         <activity android:name=".search" />

@@ -8,13 +8,13 @@
     android:orientation="vertical"
     tools:context=".festival_basic">
 
-    <include layout="@layout/top_view"/>
+    <include layout="@layout/top_view" />
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="275dp">
+        android:layout_marginLeft="275dp"
+        android:layout_marginTop="10dp">
 
         <TextView
             android:id="@+id/list_text"
@@ -46,16 +46,15 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:id="@+id/f_center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:orientation="horizontal"
-            android:layout_marginBottom="20dp">
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/f_spring"
@@ -93,8 +92,9 @@
 
     </RelativeLayout>
 
-    <include layout="@layout/category_card"
-        android:visibility="gone"/>
+    <include
+        layout="@layout/category_card"
+        android:visibility="gone" />
 
     <include layout="@layout/category_list" />
 
