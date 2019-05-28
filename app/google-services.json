@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "378303149708",
+    "firebase_url": "https://japangifu-cdc5f.firebaseio.com",
+    "project_id": "japangifu-cdc5f",
+    "storage_bucket": "japangifu-cdc5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378303149708:android:5f739533ddd2858a",
+        "android_client_info": {
+          "package_name": "kr.hs.mirim.japan_gifu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378303149708-ruhchumgpu08o9okm3v54jo8jqh1h9ob.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.hs.mirim.japan_gifu",
+            "certificate_hash": "408a0d759782663013664ab93a0945001655ca05"
+          }
+        },
+        {
+          "client_id": "378303149708-oav9dgoo25jm5u4m20dvcsicnlinqtgs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA723v6v3rissQ0wXR919zP1pcj1Oes7IE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378303149708-oav9dgoo25jm5u4m20dvcsicnlinqtgs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

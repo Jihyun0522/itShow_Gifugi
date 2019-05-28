@@ -34,7 +34,7 @@ public class signup extends AppCompatActivity {
     Button.OnClickListener gotoHome = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(context, Home.class);
+            Intent intent = new Intent(context, MainActivity.class);
             startActivity(intent);
             overridePendingTransition(0, 0);
 
