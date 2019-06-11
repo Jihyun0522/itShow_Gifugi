@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class signup extends AppCompatActivity {
     Button signin;
     Context context;
@@ -15,6 +18,9 @@ public class signup extends AppCompatActivity {
     EditText s_name;
     EditText s_email;
     EditText s_password;
+
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference = firebaseDatabase.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +40,14 @@ public class signup extends AppCompatActivity {
     Button.OnClickListener gotoHome = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(context, MainActivity.class);
+            String room = s_email.getText().toString();
+            databaseReference.child("id").push().setValue(room);
+            databaseReference.child("user").child(room).child("name").push().setValue(s_name.getText().toString());
+            databaseReference.child("user").child(room).child("passwd").push().setValue(s_password.getText().toString());
+
+            Intent intent = new Intent(getApplication(), MainActivity.class);
+            intent.putExtra("id",room);
+            intent.putExtra("pwd", s_password.getText().toString());
             startActivity(intent);
             overridePendingTransition(0, 0);
 
