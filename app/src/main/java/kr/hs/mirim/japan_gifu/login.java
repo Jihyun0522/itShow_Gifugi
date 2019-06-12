@@ -8,6 +8,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class login extends AppCompatActivity {
     Button login;
@@ -24,38 +31,36 @@ public class login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         context = this;
-        login = (Button)findViewById(R.id.login_home);
+        login = (Button) findViewById(R.id.login_home);
 
-        E_email = (EditText)findViewById(R.id.login_email);
-        E_password = (EditText)findViewById(R.id.login_password);
+        E_email = (EditText) findViewById(R.id.login_email);
+        E_password = (EditText) findViewById(R.id.login_password);
 
-        login.setOnClickListener(gotoHome);
-    }
+        login.setOnClickListener(new View.OnClickListener() {
+            class check {
+                int idcheck = 0, passwordcheck = 0;
+            }
 
-    /*
-    class check{
-            int idcheck=0,passwordcheck=0;
-        }
             check c = new check();
 
             @Override
             public void onClick(View v) {
 
-                progressBar.setVisibility(View.VISIBLE);
+                //progressBar.setVisibility(View.VISIBLE);
 
                 FirebaseDatabase mdatabase = FirebaseDatabase.getInstance();
                 DatabaseReference mdatabaseRef = mdatabase.getReference("id");
 
                 mdatabaseRef.addValueEventListener(new ValueEventListener() {
-
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-                        for(DataSnapshot messeage : dataSnapshot.getChildren()){
-                            if(messeage.getValue().toString().equals(loginid.getText().toString())) {
-                                c.idcheck=1;
+                        for (DataSnapshot messeage : dataSnapshot.getChildren()) {
+                            if (messeage.getValue().toString().equals(E_email.getText().toString())) {
+                                c.idcheck = 1;
                             }
                         }
                     }
+
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                     }
@@ -64,34 +69,35 @@ public class login extends AppCompatActivity {
                 FirebaseDatabase mdatabasepwd = FirebaseDatabase.getInstance();
                 DatabaseReference mdatabaseRefpwd = mdatabasepwd.getReference("user");
 
-                mdatabaseRefpwd.child(loginid.getText().toString()).child("passwd").addValueEventListener(new ValueEventListener() {
+                mdatabaseRefpwd.child(E_email.getText().toString()).child("passwd").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot messeage : dataSnapshot.getChildren()) {
-                            if (messeage.getValue().toString().equals(loginpwd.getText().toString())) {
+                            if (messeage.getValue().toString().equals(E_password.getText().toString())) {
                                 if (c.idcheck == 1) {
                                     Toast.makeText(login.this, "로그인 완료!", Toast.LENGTH_SHORT).show();
-                                    c.passwordcheck=1;
-                                    Intent intent = new Intent(getApplicationContext(), StartActivity.class);
-                                    intent.putExtra("id",loginid.getText().toString());
-                                    intent.putExtra("pwd",loginpwd.getText().toString());
+                                    c.passwordcheck = 1;
+                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                    intent.putExtra("id", E_email.getText().toString());
+                                    intent.putExtra("pwd", E_password.getText().toString());
                                     startActivity(intent);
                                 }
                             }
                         }
-                        if(!(c.idcheck==1&&c.passwordcheck==1)){
+                        if (!(c.idcheck == 1 && c.passwordcheck == 1)) {
                             Toast.makeText(login.this, "아이디나 비밀번호가 잘못되었습니다. 다시 입력해주세요", Toast.LENGTH_SHORT).show();
-                            loginid.setText("");
-                            loginpwd.setText("");
+                            E_email.setText("");
+                            E_password.setText("");
                         }
                     }
+
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
             }
         });
-     */
+    }
 
     Button.OnClickListener gotoHome = new View.OnClickListener() {
         @Override

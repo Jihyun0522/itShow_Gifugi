@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1051596681580-jutaleensqmhjo8dj665ehd2jdhohnst.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.hs.mirim.japan_gifu",
+            "certificate_hash": "408a0d759782663013664ab93a0945001655ca05"
+          }
+        },
+        {
           "client_id": "1051596681580-kg49jd62hi0pum04uijd5u2ci1a4ouo7.apps.googleusercontent.com",
           "client_type": 3
         }
