@@ -96,7 +96,7 @@ public class signup extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            email = email.replace(".", "/");
+                            email = email.replace(".", "_");
 
                             databaseReference.child("user").child(email).child("name").push().setValue(name);
                             databaseReference.child("user").child(email).child("pw").push().setValue(password);
