@@ -8,7 +8,9 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
@@ -21,17 +23,16 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MainActivity extends AppCompatActivity {
-    long mNow;
-    Date mDate;
-    SimpleDateFormat mFormat;
-    TextView Today;
-    TextView season;
-
-    Button category;
+public class category extends AppCompatActivity {
     Context context;
     Button home;
+    Button category;
+
     ImageButton search;
+    LinearLayout festival;
+    LinearLayout sightseeing;
+    LinearLayout stay;
+    LinearLayout food;
 
     DrawerLayout drawerLayout;
     View drawerView;
@@ -50,34 +51,14 @@ public class MainActivity extends AppCompatActivity {
 
     Intent intent;
 
-    //날짜 표시
-    private String getTime() {
-        mFormat = new SimpleDateFormat("yyyy.MM.dd");
-
-        mNow = System.currentTimeMillis();
-        mDate = new Date(mNow);
-        return mFormat.format(mDate);
-    }
-
-    //오늘의 달
-    private int getMonth() {
-        int m = 0;
-        mFormat = new SimpleDateFormat("MM");
-
-        mNow = System.currentTimeMillis();
-        mDate = new Date(mNow);
-        m = Integer.parseInt(mFormat.format(mDate));
-
-        return m;
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_category);
+        context = this;
 
         //메인 화면
-        drawerLayout = (DrawerLayout) findViewById(R.id.m_drawerLayout);
+        drawerLayout = (DrawerLayout) findViewById(R.id.c_drawerLayout);
         //drawer 참조
         drawerView = (View) findViewById(R.id.drawer_menu);
 
@@ -99,50 +80,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Today = (TextView) findViewById(R.id.today);
-        Today.setText(getTime());
+        category = findViewById(R.id.btn_category);
+        category.setTextColor(ContextCompat.getColor(this, R.color.main));
 
-        home = (Button) findViewById(R.id.btn_home);
-        season = (TextView) findViewById(R.id.season);
-        category = (Button) findViewById(R.id.btn_category);
-        search = (ImageButton) findViewById(R.id.btn_search);
-        context = this;
-
-        home.setTextColor(ContextCompat.getColor(this, R.color.main));
-
-        //봄, 여름, 가을, 겨울에 따라 한자 출력
-        switch (getMonth()) {
-            case 3:
-            case 4:
-            case 5:
-                season.setText("春");
-                break;
-
-            case 6:
-            case 7:
-            case 8:
-                season.setText("夏");
-                break;
-
-            case 9:
-            case 10:
-            case 11:
-                season.setText("秋");
-                break;
-
-            case 12:
-            case 1:
-            case 2:
-                season.setText("冬");
-                break;
-        }
-
-        //계절 intent를 제거했더니 앱이 강제종료가 되지 않음,
-        //그러나 계절 넘기는 게 필요
-        category.setOnClickListener(new View.OnClickListener() {
+        home = findViewById(R.id.btn_home);
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                intent = new Intent(context, category.class);
+                intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
@@ -150,10 +95,58 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        search = (ImageButton)findViewById(R.id.btn_search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 intent = new Intent(context, search.class);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        festival = findViewById(R.id.c_festival);
+        festival.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "category");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        sightseeing = findViewById(R.id.c_sightseeing);
+        sightseeing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("activity", "category");
+                intent.putExtra("menu_type", "sightseeing");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        stay = findViewById(R.id.c_stay);
+        stay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("activity", "category");
+                intent.putExtra("menu_type", "stay");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
+
+        food = findViewById(R.id.c_food);
+        food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("activity", "category");
+                intent.putExtra("menu_type", "food");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -165,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
-                intent.putExtra("activity", "main");
+                intent.putExtra("activity", "category");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -176,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
-                intent.putExtra("activity", "main");
+                intent.putExtra("activity", "category");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -187,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
-                intent.putExtra("activity", "main");
+                intent.putExtra("activity", "category");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -198,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
-                intent.putExtra("activity", "main");
+                intent.putExtra("activity", "category");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -209,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
-                intent.putExtra("activity", "main");
+                intent.putExtra("activity", "category");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -220,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(context, basic_menu.class);
-                intent.putExtra("activity", "main");
+                intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "sightseeing");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -232,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(context, basic_menu.class);
-                intent.putExtra("activity", "main");
+                intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "stay");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -244,11 +237,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 intent = new Intent(context, basic_menu.class);
-                intent.putExtra("activity", "main");
+                intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "food");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
         });
+
     }
+
 }

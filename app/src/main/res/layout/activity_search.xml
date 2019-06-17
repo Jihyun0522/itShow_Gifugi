@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".search"
+    android:background="#fff"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/under_line">
+
+        <RelativeLayout
+            android:layout_width="380dp"
+            android:layout_height="48dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/oval_back"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/search"/>
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="20dp"
+                android:hint="검색어를 입력하세요."
+                android:textSize="15dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="인기 검색어"
+            android:textColor="@color/main"
+            android:textSize="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="50dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/search_main"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="   다카야마   "
+                android:textSize="14dp"
+                android:textColor="#ffffff"
+                android:background="@drawable/oval_search"/>
+
+            <TextView
+                android:id="@+id/search_l1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@+id/search_main"
+                android:layout_centerVertical="true"
+                android:text="   겨울   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+            <TextView
+                android:id="@+id/search_l2"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@+id/search_l1"
+                android:layout_centerVertical="true"
+                android:text="   축제   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+            <TextView
+                android:id="@+id/search_r1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/search_main"
+                android:layout_centerVertical="true"
+                android:text="   온천   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+            <TextView
+                android:id="@+id/search_r2"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/search_r1"
+                android:layout_centerVertical="true"
+                android:text="   게로   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:text="태그 검색"
+            android:textColor="@color/main"
+            android:textSize="20dp"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/search_t_c1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="   체험   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+            <TextView
+                android:id="@+id/search_t_l1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@+id/search_t_c1"
+                android:layout_centerVertical="true"
+                android:text="   축제   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+            <TextView
+                android:id="@+id/search_t_l2"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@+id/search_t_l1"
+                android:layout_centerVertical="true"
+                android:text="   음식   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+            <TextView
+                android:id="@+id/search_t_r1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/search_t_c1"
+                android:layout_centerVertical="true"
+                android:text="   숙박   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+            <TextView
+                android:id="@+id/search_t_r2"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/search_t_r1"
+                android:layout_centerVertical="true"
+                android:text="   쇼핑   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="75dp"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true">
+
+            <LinearLayout
+                android:id="@+id/search_t_c2"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/search_t_c2_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="4dp"
+                    android:text="   정적인   "
+                    android:textSize="14dp"
+                    android:textColor="@color/tag"
+                    android:background="@drawable/oval_back"/>
+
+                <TextView
+                    android:id="@+id/search_t_c2_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="4dp"
+                    android:text="   붐비는   "
+                    android:textSize="14dp"
+                    android:textColor="@color/tag"
+                    android:background="@drawable/oval_back"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/search_t2_l1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginRight="8dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toLeftOf="@+id/search_t_c2"
+                android:layout_centerVertical="true"
+                android:text="   활동적인   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+            <TextView
+                android:id="@+id/search_t2_r1"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_toRightOf="@+id/search_t_c2"
+                android:layout_centerVertical="true"
+                android:text="   한적한   "
+                android:textSize="14dp"
+                android:textColor="@color/tag"
+                android:background="@drawable/oval_back"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>
