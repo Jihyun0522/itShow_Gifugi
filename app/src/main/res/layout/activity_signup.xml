@@ -48,10 +48,13 @@
                 android:id="@+id/signup_name"
                 android:layout_width="160dp"
                 android:layout_height="33dp"
+                android:layout_above="@+id/signup_password"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
+                android:layout_marginBottom="47dp"
                 android:hint="user name"
-                android:textSize="12dp"/>
+                android:maxLines="1"
+                android:textSize="12dp" />
 
         </RelativeLayout>
 
@@ -74,7 +77,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 android:hint="e-mail"
-                android:textSize="12dp"/>
+                android:textSize="12dp"
+                android:maxLines="1"/>
 
         </RelativeLayout>
 
@@ -97,7 +101,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 android:hint="password"
-                android:textSize="12dp"/>
+                android:textSize="12dp"
+                android:maxLines="1"/>
 
         </RelativeLayout>
 

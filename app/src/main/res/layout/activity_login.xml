@@ -9,6 +9,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/login_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -51,7 +52,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 android:hint="e-mail"
-                android:textSize="12dp"/>
+                android:textSize="12dp"
+                android:maxLines="1"/>
 
         </RelativeLayout>
 
@@ -74,7 +76,8 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
                 android:hint="password"
-                android:textSize="12dp"/>
+                android:textSize="12dp"
+                android:maxLines="1"/>
 
         </RelativeLayout>
 
@@ -87,4 +90,25 @@
             android:background="@drawable/login"/>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:progressTint="@color/main" />
+
+    <TextView
+        android:id="@+id/login_signUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="If you don't have an account yet, SIGN UP!"
+        android:textColor="@color/uncheck_dark"
+        android:gravity="center"
+        android:textSize="14dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/login_layout"/>
+
+
 </RelativeLayout>

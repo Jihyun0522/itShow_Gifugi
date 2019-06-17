@@ -23,6 +23,7 @@ public class first extends AppCompatActivity {
         signup = (Button)findViewById(R.id.signup);
 
         login.setOnClickListener(btnOnClick);
+        signup.setOnClickListener(btnOnClick);
 
     }
 
