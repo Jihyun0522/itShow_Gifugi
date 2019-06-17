@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "221638110044",
+    "firebase_url": "https://japangifugi-a8d93.firebaseio.com",
+    "project_id": "japangifugi-a8d93",
+    "storage_bucket": "japangifugi-a8d93.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:221638110044:android:fdaae4e2e5ba7fae",
+        "android_client_info": {
+          "package_name": "kr.hs.e_mirim.Japan_Gifugi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "221638110044-rt2dpkr2e8jtrnf464nsr3vd8pq6d57e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.hs.e_mirim.Japan_Gifugi",
+            "certificate_hash": "482ee00933f1746644377f0fd3c105df59ff3310"
+          }
+        },
+        {
+          "client_id": "221638110044-muavvlqk1ea91mdjin7r2jhdg713s86j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAioPf9HKUjIcg_t5vbqzdZEjlTfU1rjrc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "221638110044-muavvlqk1ea91mdjin7r2jhdg713s86j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
