@@ -91,32 +91,28 @@ public class signup extends AppCompatActivity {
         progressDialog.show();
 
         //creating a new user
-        firebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            email = email.replace(".", "_");
+        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    email = email.replace(".", "_");
 
-                            databaseReference.child("user").child(email).child("name").push().setValue(name);
-                            databaseReference.child("user").child(email).child("pw").push().setValue(password);
+                    databaseReference.child("user").child(email).child("name").push().setValue(name);
+                    databaseReference.child("user").child(email).child("pw").push().setValue(password);
 
-                            Toast.makeText(signup.this, "회원가입 성공!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(signup.this, "회원가입 성공!", Toast.LENGTH_SHORT).show();
 
-                            Intent intent = new Intent(context, MainActivity.class);
-                            intent.putExtra("email", email);
-                            intent.putExtra("name", name);
-                            intent.putExtra("pw", name);
-                            startActivity(intent);
-                            overridePendingTransition(0, 0);
-                        } else {
-                            //에러발생시
-                            Toast.makeText(signup.this, "에러유형\n - 이미 등록된 이메일  \n -암호 최소 6자리 이상 \n - 서버에러", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(signup.this, "등록 에러!", Toast.LENGTH_SHORT).show();
-                        }
-                        progressDialog.dismiss();
-                    }
-                });
+                    Intent intent = new Intent(context, login.class);
+                    startActivity(intent);
+                    overridePendingTransition(0, 0);
+                } else {
+                    //에러발생시
+                    Toast.makeText(signup.this, "에러유형\n - 이미 등록된 이메일  \n -암호 최소 6자리 이상 \n - 서버에러", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(signup.this, "등록 에러!", Toast.LENGTH_SHORT).show();
+                }
+                progressDialog.dismiss();
+            }
+        });
 
     }
 

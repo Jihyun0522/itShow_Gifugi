@@ -91,14 +91,6 @@
 
     </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:progressTint="@color/main" />
-
     <TextView
         android:id="@+id/login_signUp"
         android:layout_width="match_parent"

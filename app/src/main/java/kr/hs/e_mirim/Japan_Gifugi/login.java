@@ -1,10 +1,15 @@
 
 package kr.hs.e_mirim.Japan_Gifugi;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,11 +17,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Map;
 
 public class login extends AppCompatActivity {
     Button login;
@@ -25,88 +37,40 @@ public class login extends AppCompatActivity {
     EditText E_email;
     EditText E_password;
     TextView textView;
-    ProgressBar progressBar;
 
-    String name = "";
+    String email;
+    String password;
+    String name ="";
+
+    //define firebase object
+    FirebaseAuth firebaseAuth;
+
+    //RealTime Database
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference;
+
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        //initializig firebase auth object
+        firebaseAuth = FirebaseAuth.getInstance();
+
         context = this;
-        login = (Button)findViewById(R.id.login_home);
+        login = (Button) findViewById(R.id.login_home);
 
-        E_email = (EditText)findViewById(R.id.login_email);
-        E_password = (EditText)findViewById(R.id.login_password);
+        E_email = (EditText) findViewById(R.id.login_email);
+        E_password = (EditText) findViewById(R.id.login_password);
         textView = (TextView) findViewById(R.id.login_signUp);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar);
-
-        progressBar.setVisibility(View.INVISIBLE);
+        progressDialog = new ProgressDialog(this);
 
         login.setOnClickListener(new View.OnClickListener() {
-
-            class check{
-                int id_check = 0;
-                int password_check=0;
-            }
-            check c = new check();
-
             @Override
             public void onClick(View v) {
-
-                progressBar.setVisibility(View.VISIBLE);
-
-                FirebaseDatabase mdatabase = FirebaseDatabase.getInstance();
-                final DatabaseReference mdatabaseRef = mdatabase.getReference("email");
-
-                mdatabaseRef.addValueEventListener(new ValueEventListener() {
-
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for(DataSnapshot messeage : dataSnapshot.getChildren()){
-                            if(messeage.getValue().toString().equals(E_email.getText().toString())) {
-                                c.id_check=1;
-                            }
-                        }
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
-
-                FirebaseDatabase mdatabasepwd = FirebaseDatabase.getInstance();
-                DatabaseReference mdatabaseRefUser = mdatabasepwd.getReference("user");
-                name = mdatabaseRefUser.child(E_email.getText().toString()).child("name").toString();
-
-                mdatabaseRefUser.child(E_email.getText().toString()).child("pw").addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        for (DataSnapshot messeage : dataSnapshot.getChildren()) {
-                            if (messeage.getValue().toString().equals(E_email.getText().toString())) {
-                                if (c.id_check == 1) {
-                                    Toast.makeText(login.this, "로그인 완료!", Toast.LENGTH_SHORT).show();
-                                    c.password_check = 1;
-
-
-                                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                                    intent.putExtra("email", E_email.getText().toString());
-                                    intent.putExtra("name", name);
-                                    intent.putExtra("pw", E_password.getText().toString());
-                                    startActivity(intent);
-                                }
-                            }
-                        }
-                        if(!(c.id_check == 1 && c.password_check == 1)){
-                            Toast.makeText(login.this, "아이디나 비밀번호가 잘못되었습니다. 다시 입력해주세요", Toast.LENGTH_SHORT).show();
-                            E_email.setText("");
-                            E_password.setText("");
-                        }
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                    }
-                });
+                userLogin();
             }
         });
 
@@ -119,4 +83,60 @@ public class login extends AppCompatActivity {
         });
     }
 
+    private void userLogin() {
+        email = E_email.getText().toString().trim();
+        password = E_password.getText().toString().trim();
+
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(this, "email을 입력해 주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(this, "password를 입력해 주세요.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        progressDialog.setMessage("로그인중입니다. 잠시 기다려 주세요...");
+        progressDialog.show();
+
+        //logging in the user
+        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                progressDialog.dismiss();
+                if (task.isSuccessful()) {
+                    email = email.replace(".", "_");
+                    databaseReference = firebaseDatabase.getReference().child("user/" + email + "/name");
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            //name = dataSnapshot.getValue(String.class);
+                            //Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
+                            //Log.i("TAG: value is ",  name);
+                            for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
+                                String val = childSnapshot.getValue(String.class);
+                                Log.i("TAG: value is ",  val);
+                                name = val;
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+                            Log.w("TAG: ", "Failed to read value", databaseError.toException());
+                        }
+                    });
+
+                    Intent intent = new Intent(context, MainActivity.class);
+                    intent.putExtra("email", email);
+                    intent.putExtra("name", name);
+                    intent.putExtra("pw", password);
+                    startActivity(intent);
+                    overridePendingTransition(0, 0);
+                } else {
+                    Toast.makeText(getApplicationContext(), "로그인 실패!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+    }//userLogin
 }
