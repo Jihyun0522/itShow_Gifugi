@@ -110,13 +110,9 @@ public class login extends AppCompatActivity {
                     databaseReference.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            //name = dataSnapshot.getValue(String.class);
-                            //Map<String, Object> map = (Map<String, Object>) dataSnapshot.getValue();
-                            //Log.i("TAG: value is ",  name);
                             for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {
-                                String val = childSnapshot.getValue(String.class);
-                                Log.i("TAG: value is ",  val);
-                                name = val;
+                                name = childSnapshot.getValue(String.class);
+                                Log.i("TAG: value is ",  name);
                             }
                         }
 
