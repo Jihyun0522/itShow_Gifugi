@@ -53,8 +53,9 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginBottom="47dp"
                 android:hint="user name"
-                android:maxLines="1"
-                android:textSize="12dp" />
+                android:textSize="12dp"
+                android:singleLine="true"
+                android:lines="1"/>
 
         </RelativeLayout>
 
@@ -78,7 +79,8 @@
                 android:layout_marginRight="10dp"
                 android:hint="e-mail"
                 android:textSize="12dp"
-                android:maxLines="1"/>
+                android:singleLine="true"
+                android:lines="1"/>
 
         </RelativeLayout>
 
@@ -102,7 +104,8 @@
                 android:layout_marginRight="10dp"
                 android:hint="password"
                 android:textSize="12dp"
-                android:maxLines="1"/>
+                android:singleLine="true"
+                android:lines="1"/>
 
         </RelativeLayout>
 
