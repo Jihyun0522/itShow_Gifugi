@@ -108,6 +108,7 @@ public class login extends AppCompatActivity {
                     email = email.replace(".", "_");
                     databaseReference = firebaseDatabase.getReference().child("user/" + email + "/name");
                     databaseReference.addValueEventListener(new ValueEventListener() {
+
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             for (DataSnapshot childSnapshot: dataSnapshot.getChildren()) {

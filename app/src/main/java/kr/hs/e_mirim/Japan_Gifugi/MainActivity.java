@@ -47,8 +47,20 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout s_sightseeing;
     LinearLayout s_stay;
     LinearLayout s_food;
+    TextView s_name_user;
+    TextView s_id_user;
 
     Intent intent;
+
+    //사진 이름. activity / festival / food / hotel 순
+    String image_name[][] = {
+            {"게로온천", "식품샘플"},
+            {"가을 다카야마", "나가라강", "노부나가", "데지카라", "도산", "봄 다카야마", "이케노우에"},
+            {"가와라야", "반쇼칸", "일본요리 히라이", "코라쿠소", "히다소2"},
+            {"기후 그랜드 호텔1", "이시킨", "주하치로", "컴포트", "파크", "하모니"}
+    };
+
+    String name = "name", email = "email", pw ="1234";
 
     //날짜 표시
     private String getTime() {
@@ -75,6 +87,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        intent = getIntent();
+        name = intent.getStringExtra("name");
+        email = intent.getStringExtra("email");
+        pw = intent.getStringExtra("pw");
+
+        email = email.replace("_", ".");
+
+        s_name_user = findViewById(R.id.s_name_user);
+        s_name_user.setText(name);
+        s_id_user = findViewById(R.id.s_id_user);
+        s_id_user.setText(email);
 
         //메인 화면
         drawerLayout = (DrawerLayout) findViewById(R.id.m_drawerLayout);
@@ -137,12 +161,17 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
 
-        //계절 intent를 제거했더니 앱이 강제종료가 되지 않음,
-        //그러나 계절 넘기는 게 필요
+        //main image 띄우기
+
+
         category.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 intent = new Intent(context, category.class);
+                intent.putExtra("month", getMonth());
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
@@ -166,6 +195,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "main");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -177,6 +209,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "main");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -188,6 +223,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "main");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -199,6 +237,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "main");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -210,6 +251,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "main");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -222,6 +266,9 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(context, basic_menu.class);
                 intent.putExtra("activity", "main");
                 intent.putExtra("menu_type", "sightseeing");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -234,6 +281,9 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(context, basic_menu.class);
                 intent.putExtra("activity", "main");
                 intent.putExtra("menu_type", "stay");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -246,6 +296,9 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(context, basic_menu.class);
                 intent.putExtra("activity", "main");
                 intent.putExtra("menu_type", "food");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }

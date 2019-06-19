@@ -19,6 +19,7 @@
             layout="@layout/top_menu"/>
 
         <RelativeLayout
+            android:id="@+id/top_season"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/top">
@@ -47,17 +48,32 @@
 
         </RelativeLayout>
 
-        <!-- 사진 레이아웃을 따로 만드는 것을 고민 -->
-        <ImageView
-            android:layout_width="330dp"
-            android:layout_height="430dp"
-            android:layout_alignParentBottom="true"
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:layout_marginTop="35dp"
-            android:layout_marginBottom="25dp"
-            android:src="@drawable/card2" />
+            android:layout_below="@+id/top_season">
 
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/main_card1"
+                        layout="@layout/card_main"/>
+
+                </RelativeLayout>
+
+            </HorizontalScrollView>
+
+        </RelativeLayout>
+0
     </RelativeLayout>
     <!--배경이 될 Layout-->
 
