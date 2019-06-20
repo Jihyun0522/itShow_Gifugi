@@ -79,6 +79,7 @@ public class login extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(context, signup.class);
                 startActivity(intent);
+                finish();
             }
         });
     }
@@ -115,6 +116,14 @@ public class login extends AppCompatActivity {
                                 name = childSnapshot.getValue(String.class);
                                 Log.i("TAG: value is ",  name);
                             }
+
+                            Intent intent = new Intent(context, MainActivity.class);
+                            intent.putExtra("email", email);
+                            intent.putExtra("name", name);
+                            intent.putExtra("pw", password);
+                            startActivity(intent);
+                            overridePendingTransition(0, 0);
+                            finish();
                         }
 
                         @Override
@@ -122,13 +131,6 @@ public class login extends AppCompatActivity {
                             Log.w("TAG: ", "Failed to read value", databaseError.toException());
                         }
                     });
-
-                    Intent intent = new Intent(context, MainActivity.class);
-                    intent.putExtra("email", email);
-                    intent.putExtra("name", name);
-                    intent.putExtra("pw", password);
-                    startActivity(intent);
-                    overridePendingTransition(0, 0);
                 } else {
                     Toast.makeText(getApplicationContext(), "로그인 실패!", Toast.LENGTH_LONG).show();
                 }
