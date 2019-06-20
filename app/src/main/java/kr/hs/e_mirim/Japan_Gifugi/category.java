@@ -1,5 +1,6 @@
 package kr.hs.e_mirim.Japan_Gifugi;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
@@ -19,6 +20,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -50,6 +55,15 @@ public class category extends AppCompatActivity {
     LinearLayout s_food;
 
     Intent intent;
+
+    //define firebase object
+    FirebaseAuth firebaseAuth;
+
+    //RealTime Database
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference;
+
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +134,7 @@ public class category extends AppCompatActivity {
         sightseeing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(context, basic_menu.class);
+                intent = new Intent(context, experience_basic.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "sightseeing");
                 startActivity(intent);
@@ -132,7 +146,7 @@ public class category extends AppCompatActivity {
         stay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(context, basic_menu.class);
+                intent = new Intent(context, hotel_menu.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "stay");
                 startActivity(intent);
@@ -144,7 +158,7 @@ public class category extends AppCompatActivity {
         food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(context, basic_menu.class);
+                intent = new Intent(context, food_basic.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "food");
                 startActivity(intent);
@@ -245,5 +259,6 @@ public class category extends AppCompatActivity {
         });
 
     }
+
 
 }

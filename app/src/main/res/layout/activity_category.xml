@@ -55,9 +55,9 @@
 
                     <ImageView
                         android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_height="54dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/on_festival"/>
+                        android:background="@drawable/on_festival" />
 
                     <TextView
                         android:layout_width="80dp"

@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "221638110044-ntbs5kedcs46foeagaabsqk6p74nvnco.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.hs.e_mirim.Japan_Gifugi",
+            "certificate_hash": "5cb5c5aaf6185dd3644c93e3e6a339773fb8e214"
+          }
+        },
+        {
+          "client_id": "221638110044-2sdorei34pjej7g02ofrfakgiianfq8a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.hs.e_mirim.Japan_Gifugi",
+            "certificate_hash": "bce941219b10384bd890716197060cae2174b029"
+          }
+        },
+        {
           "client_id": "221638110044-rt2dpkr2e8jtrnf464nsr3vd8pq6d57e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

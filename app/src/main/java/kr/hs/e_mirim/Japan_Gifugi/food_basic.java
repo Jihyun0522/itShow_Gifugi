@@ -2,19 +2,16 @@ package kr.hs.e_mirim.Japan_Gifugi;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -26,7 +23,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class festival_basic extends AppCompatActivity {
+public class food_basic extends AppCompatActivity {
     Context context;
 
     ImageButton search;
@@ -47,11 +44,11 @@ public class festival_basic extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_festival_basic);
+        setContentView(R.layout.activity_food_basic);
         context = this;
 
         menu_text = (TextView) findViewById(R.id.top_view_text);
-        menu_text.setText("FESTIVAL");
+        menu_text.setText("FOOD");
 
         search = (ImageButton)findViewById(R.id.btn_search);
         search.setOnClickListener(new View.OnClickListener() {
@@ -90,7 +87,7 @@ public class festival_basic extends AppCompatActivity {
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());
         listView.setAdapter(adapter);
 
-        mReference = mDatabase.getReference("content/festival"); // 변경값을 확인할 child 이름
+        mReference = mDatabase.getReference("content/food"); // 변경값을 확인할 child 이름
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -154,4 +151,5 @@ public class festival_basic extends AppCompatActivity {
         super.onDestroy();
         mReference.removeEventListener(mChild);
     }
+
 }
