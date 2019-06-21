@@ -156,7 +156,7 @@ public class category extends AppCompatActivity {
         sightseeing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(context, experience_basic.class);
+                intent = new Intent(context, basic_menu.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "sightseeing");
                 intent.putExtra("name", name);
@@ -171,7 +171,7 @@ public class category extends AppCompatActivity {
         stay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(context, hotel_menu.class);
+                intent = new Intent(context, basic_menu.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "stay");
                 intent.putExtra("name", name);
@@ -186,7 +186,7 @@ public class category extends AppCompatActivity {
         food.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(context, food_basic.class);
+                intent = new Intent(context, basic_menu.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "food");
                 intent.putExtra("name", name);
