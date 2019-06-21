@@ -53,8 +53,12 @@ public class category extends AppCompatActivity {
     LinearLayout s_sightseeing;
     LinearLayout s_stay;
     LinearLayout s_food;
+    TextView s_name_user;
+    TextView s_id_user;
 
     Intent intent;
+
+    String name, email, pw;
 
     //define firebase object
     FirebaseAuth firebaseAuth;
@@ -70,6 +74,18 @@ public class category extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category);
         context = this;
+
+        intent = getIntent();
+        name = intent.getStringExtra("name");
+        email = intent.getStringExtra("email");
+        pw = intent.getStringExtra("pw");
+
+        email = email.replace("_", ".");
+
+        s_name_user = findViewById(R.id.s_name_user);
+        s_name_user.setText(name);
+        s_id_user = findViewById(R.id.s_id_user);
+        s_id_user.setText(email);
 
         //메인 화면
         drawerLayout = (DrawerLayout) findViewById(R.id.c_drawerLayout);
@@ -102,6 +118,9 @@ public class category extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 intent = new Intent(context, MainActivity.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
@@ -125,6 +144,9 @@ public class category extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -137,6 +159,9 @@ public class category extends AppCompatActivity {
                 intent = new Intent(context, experience_basic.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "sightseeing");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -149,6 +174,9 @@ public class category extends AppCompatActivity {
                 intent = new Intent(context, hotel_menu.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "stay");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -161,6 +189,9 @@ public class category extends AppCompatActivity {
                 intent = new Intent(context, food_basic.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "food");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -173,8 +204,12 @@ public class category extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -184,8 +219,12 @@ public class category extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -195,8 +234,12 @@ public class category extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -206,8 +249,12 @@ public class category extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -217,8 +264,12 @@ public class category extends AppCompatActivity {
             public void onClick(View v) {
                 intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -229,8 +280,12 @@ public class category extends AppCompatActivity {
                 intent = new Intent(context, basic_menu.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "sightseeing");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -241,8 +296,12 @@ public class category extends AppCompatActivity {
                 intent = new Intent(context, basic_menu.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "stay");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -253,8 +312,12 @@ public class category extends AppCompatActivity {
                 intent = new Intent(context, basic_menu.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "food");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 

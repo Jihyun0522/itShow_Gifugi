@@ -16,13 +16,14 @@ import android.widget.TextView;
 
 public class basic_menu extends AppCompatActivity {
     Context context;
+    Intent intent;
 
     ImageButton search;
 
     TextView menu_text;
     RelativeLayout back;
 
-    String menu;
+    String menu, name, email, pw, activity;
 
     Switch changeLayout;
     LinearLayout card_view;
@@ -34,7 +35,11 @@ public class basic_menu extends AppCompatActivity {
         setContentView(R.layout.activity_basic_menu);
         context = this;
 
-        Intent intent = getIntent();
+        intent = getIntent();
+        name = intent.getStringExtra("name");
+        email = intent.getStringExtra("email");
+        pw = intent.getStringExtra("pw");
+        activity = intent.getStringExtra("activity");
         menu = intent.getStringExtra("menu_type");
 
         menu_text = findViewById(R.id.top_view_text);
@@ -67,8 +72,6 @@ public class basic_menu extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getIntent();
-                String activity = intent.getStringExtra("activity");
                 switch (activity){
                     case "main" :
                         intent = new Intent(context, MainActivity.class);
@@ -78,6 +81,10 @@ public class basic_menu extends AppCompatActivity {
                         intent = new Intent(context, category.class);
                         break;
                 }
+
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 

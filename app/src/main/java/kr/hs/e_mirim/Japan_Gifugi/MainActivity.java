@@ -200,6 +200,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -214,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -228,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -242,6 +245,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -256,6 +260,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -271,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -286,6 +292,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -301,6 +308,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
     }

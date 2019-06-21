@@ -28,6 +28,7 @@ import java.util.List;
 
 public class festival_basic extends AppCompatActivity {
     Context context;
+    Intent intent;
 
     ImageButton search;
 
@@ -44,11 +45,19 @@ public class festival_basic extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     List<Object> Array = new ArrayList<>();
 
+    String name, email, pw, activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_festival_basic);
         context = this;
+
+        intent = getIntent();
+        name = intent.getStringExtra("name");
+        email = intent.getStringExtra("email");
+        pw = intent.getStringExtra("pw");
+        activity = intent.getStringExtra("activity");
 
         menu_text = (TextView) findViewById(R.id.top_view_text);
         menu_text.setText("FESTIVAL");
@@ -57,7 +66,7 @@ public class festival_basic extends AppCompatActivity {
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, search.class);
+                intent = new Intent(context, search.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -67,13 +76,14 @@ public class festival_basic extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getIntent();
-                String activity = intent.getExtras().getString("activity");
                 if (activity.equals("category")) {
                     intent = new Intent(context, category.class);
                 } else if(activity.equals("main")){
                     intent = new Intent(context, MainActivity.class);
                 }
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
 
