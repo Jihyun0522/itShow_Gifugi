@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -35,6 +36,11 @@ public class festival_basic extends AppCompatActivity {
     TextView menu_text;
     RelativeLayout back;
 
+    ImageButton spring;
+    ImageButton summer;
+    ImageButton fall;
+    ImageButton winter;
+
     LinearLayout list_view;
 
     private FirebaseDatabase mDatabase;
@@ -45,7 +51,7 @@ public class festival_basic extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     List<Object> Array = new ArrayList<>();
 
-    String name, email, pw, activity;
+    String name, email, pw, activity, season;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +64,7 @@ public class festival_basic extends AppCompatActivity {
         email = intent.getStringExtra("email");
         pw = intent.getStringExtra("pw");
         activity = intent.getStringExtra("activity");
+        season = intent.getStringExtra("season");
 
         menu_text = (TextView) findViewById(R.id.top_view_text);
         menu_text.setText("FESTIVAL");
@@ -90,6 +97,41 @@ public class festival_basic extends AppCompatActivity {
                 finish();
             }
         });//back
+
+        spring = findViewById(R.id.f_spring);
+        summer = findViewById(R.id.f_summer);
+        fall = findViewById(R.id.f_fall);
+        winter = findViewById(R.id.f_winter);
+
+        switch (season) {
+            case "spring":
+                spring.setImageResource(R.drawable.on_spring);
+                summer.setImageResource(R.drawable.un_summer);
+                fall.setImageResource(R.drawable.un_fall);
+                winter.setImageResource(R.drawable.un_winter);
+                break;
+
+            case "summer":
+                spring.setImageResource(R.drawable.un_spring);
+                summer.setImageResource(R.drawable.on_summer);
+                fall.setImageResource(R.drawable.un_fall);
+                winter.setImageResource(R.drawable.un_winter);
+                break;
+
+            case "fall":
+                spring.setImageResource(R.drawable.un_spring);
+                summer.setImageResource(R.drawable.un_summer);
+                fall.setImageResource(R.drawable.on_fall);
+                winter.setImageResource(R.drawable.un_winter);
+                break;
+
+            case "winter":
+                spring.setImageResource(R.drawable.un_spring);
+                summer.setImageResource(R.drawable.un_summer);
+                fall.setImageResource(R.drawable.un_fall);
+                winter.setImageResource(R.drawable.on_winter);
+                break;
+        }
 
         list_view = findViewById(R.id.list_view);
 
