@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             {"기후 그랜드 호텔1", "이시킨", "주하치로", "컴포트", "파크", "하모니"}
     };
 
-    String name = "name", email = "email", pw ="1234";
+    String name, email, pw, season_text;
 
     //날짜 표시
     private String getTime() {
@@ -140,24 +140,28 @@ public class MainActivity extends AppCompatActivity {
             case 4:
             case 5:
                 season.setText("春");
+                season_text = "spring";
                 break;
 
             case 6:
             case 7:
             case 8:
                 season.setText("夏");
+                season_text = "summer";
                 break;
 
             case 9:
             case 10:
             case 11:
                 season.setText("秋");
+                season_text = "fall";
                 break;
 
             case 12:
             case 1:
             case 2:
                 season.setText("冬");
+                season_text = "winter";
                 break;
         }
 
@@ -198,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", season_text);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -213,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", "spring");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -228,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", "summer");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -243,6 +250,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", "fall");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -258,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", "winter");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
