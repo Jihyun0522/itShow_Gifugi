@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kr.hs.e_mirim.Japan_Gifugi">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -10,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-
+        <activity android:name=".post"></activity>
         <!-- Splash -->
         <activity
             android:name=".SplashActivity"
@@ -22,15 +23,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".first"></activity>
-        <activity android:name=".login"></activity>
-        <activity android:name=".signup"></activity>
-        <activity android:name=".basic_menu"></activity>
+        <activity android:name=".first" />
+        <activity android:name=".login" />
+        <activity android:name=".signup" />
+        <activity android:name=".basic_menu" />
         <activity android:name=".festival_basic" />
         <activity android:name=".search" />
         <activity android:name=".category" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

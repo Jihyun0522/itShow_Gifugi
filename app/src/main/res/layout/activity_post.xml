@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".post">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/linear1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/post_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linear1"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/explane"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="#e1e1e1"
+                    android:paddingTop="10dp"
+                    android:text="소개"
+                    android:textAlignment="center" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/oval_search"
+                        android:text=" " />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/oval_search"
+                        android:text=" " />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/oval_search"
+                        android:text=" " />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linear3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear2"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <RelativeLayout
+                    android:id="@+id/hotel_name_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/hotel_name_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="이름 : "
+                        android:textSize="8pt" />
+
+                    <TextView
+                        android:id="@+id/hotel_name_content"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:text="이름 : "
+                        android:textSize="8pt"
+                        android:gravity="right"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/period_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/period_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="개최기간 : "
+                        android:textSize="8pt" />
+
+                    <TextView
+                        android:id="@+id/period_content"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:text="이름 : "
+                        android:textSize="8pt"
+                        android:gravity="right"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/time_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/time_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간 : "
+                        android:textSize="8pt" />
+
+                    <TextView
+                        android:id="@+id/time_content"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:text="이름 : "
+                        android:textSize="8pt"
+                        android:gravity="right"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/holiday_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/holiday_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="휴일 : "
+                        android:textSize="8pt" />
+
+                    <TextView
+                        android:id="@+id/holiday_content"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:text="이름 : "
+                        android:textSize="8pt"
+                        android:gravity="right"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/price_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/price_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="가격 : "
+                        android:textSize="8pt" />
+
+                    <TextView
+                        android:id="@+id/price_content"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:text="이름 : "
+                        android:textSize="8pt"
+                        android:gravity="right"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/tel_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/tel_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="전화번호 : "
+                        android:textSize="8pt" />
+
+                    <TextView
+                        android:id="@+id/tel_content"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:text="이름 : "
+                        android:textSize="8pt"
+                        android:gravity="right"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/site_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <TextView
+                        android:id="@+id/site_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="사이트 : "
+                        android:textSize="8pt" />
+
+                    <TextView
+                        android:id="@+id/site_content"
+                        android:layout_width="260dp"
+                        android:layout_height="wrap_content"
+                        android:text="이름 : "
+                        android:textSize="8pt"
+                        android:gravity="right"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/context_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear3">
+
+            </ListView>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

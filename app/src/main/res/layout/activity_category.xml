@@ -361,7 +361,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_below="@+id/category_text4"
                                     android:layout_margin="2dp"
-                                    android:text="음식샘플 만들기"
+                                    android:text="식품샘플 제작"
                                     android:textColor="@color/tag"
                                     android:textSize="12dp" />
 
