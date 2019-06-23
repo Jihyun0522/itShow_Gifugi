@@ -46,7 +46,7 @@ public class basic_menu extends AppCompatActivity {
 
         switch (menu){
             case "sightseeing":
-                menu_text.setText("SIGHTSEEING");
+                menu_text.setText("EXPERIENCE");
                 break;
 
             case "stay":

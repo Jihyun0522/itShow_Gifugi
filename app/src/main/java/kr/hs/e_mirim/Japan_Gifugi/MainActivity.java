@@ -357,12 +357,12 @@ public class MainActivity extends AppCompatActivity {
         sub_text.setText("아름다운 불꽃을 바라보며");
         main_text.setText("나가라강\n불꽃놀이 대회");
 
-        int radius = 30; // corner radius, higher value = more rounded
+        int radius = 20; // corner radius, higher value = more rounded
         int margin = 10; // crop margin, set to 0 for corners with no crop
         Glide.with(this)
                 .load("https://firebasestorage.googleapis.com/v0/b/japangifugi-a8d93.appspot.com/o/festival%2F%EB%82%98%EA%B0%80%EB%9D%BC%EA%B0%95.jpg?alt=media&token=010f1dec-609f-485f-8b7e-28139b07a0ca")
-                .transform(new RoundedCornersTransformation(radius, margin))
                 .override(340,440).centerCrop()
+                /*.transform(new RoundedCornersTransformation(radius, margin))*/
                 .into(imageCard);
     }
 }
