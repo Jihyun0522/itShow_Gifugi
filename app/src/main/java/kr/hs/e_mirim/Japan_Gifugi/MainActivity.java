@@ -3,6 +3,7 @@ package kr.hs.e_mirim.Japan_Gifugi;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -18,8 +19,20 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class MainActivity extends AppCompatActivity {
     long mNow;
@@ -51,6 +64,19 @@ public class MainActivity extends AppCompatActivity {
     TextView s_id_user;
 
     Intent intent;
+
+    //card view
+    ImageView imageCard;
+    TextView sub_text;
+    TextView main_text;
+
+    String sub, main;
+
+    //RealTime Database
+    private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+    private DatabaseReference databaseReference;
+
+    StorageReference reference = FirebaseStorage.getInstance().getReferenceFromUrl("gs://japangifugi-a8d93.appspot.com");
 
     //사진 이름. activity / festival / food / hotel 순
     String image_name[][] = {
@@ -320,5 +346,23 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        //card view
+        imageCard = findViewById(R.id.main_card);
+        sub_text = findViewById(R.id.sub_text);
+        main_text = findViewById(R.id.main_text);
+
+        reference.child("festival").child("나가라강.jpg");
+
+        sub_text.setText("아름다운 불꽃을 바라보며");
+        main_text.setText("나가라강\n불꽃놀이 대회");
+
+        int radius = 30; // corner radius, higher value = more rounded
+        int margin = 10; // crop margin, set to 0 for corners with no crop
+        Glide.with(this)
+                .load("https://firebasestorage.googleapis.com/v0/b/japangifugi-a8d93.appspot.com/o/festival%2F%EB%82%98%EA%B0%80%EB%9D%BC%EA%B0%95.jpg?alt=media&token=010f1dec-609f-485f-8b7e-28139b07a0ca")
+                .transform(new RoundedCornersTransformation(radius, margin))
+                .override(340,440).centerCrop()
+                .into(imageCard);
     }
 }
