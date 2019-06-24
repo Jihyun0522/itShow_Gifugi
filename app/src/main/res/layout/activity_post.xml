@@ -22,8 +22,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/cancel"
-                android:visibility="gone"/>
+                android:background="@drawable/cancel"/>
 
             <LinearLayout
                 android:id="@+id/linear1"
@@ -33,7 +32,9 @@
                 <ImageView
                     android:id="@+id/post_image"
                     android:layout_width="match_parent"
-                    android:layout_height="300dp" />
+                    android:layout_height="300dp"
+                    android:padding="0sp"
+                    android:scaleType="centerCrop"/>
 
             </LinearLayout>
 

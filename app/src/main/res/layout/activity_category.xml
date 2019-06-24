@@ -192,7 +192,7 @@
                         <LinearLayout
                             android:id="@+id/category_card_1"
                             android:layout_width="140dp"
-                            android:layout_height="190dp"
+                            android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:background="@drawable/oval"
                             android:orientation="vertical">
@@ -208,7 +208,7 @@
                                 android:layout_height="40dp"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentBottom="true"
-                                android:layout_marginLeft="15dp"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginBottom="10dp">
 
@@ -237,7 +237,7 @@
                         <LinearLayout
                             android:id="@+id/category_card_2"
                             android:layout_width="140dp"
-                            android:layout_height="190dp"
+                            android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:background="@drawable/oval"
                             android:orientation="vertical">
@@ -253,7 +253,7 @@
                                 android:layout_height="40dp"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentBottom="true"
-                                android:layout_marginLeft="15dp"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginBottom="10dp">
 
@@ -282,7 +282,7 @@
                         <LinearLayout
                             android:id="@+id/category_card_3"
                             android:layout_width="140dp"
-                            android:layout_height="190dp"
+                            android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:background="@drawable/oval"
                             android:orientation="vertical">
@@ -298,7 +298,7 @@
                                 android:layout_height="40dp"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentBottom="true"
-                                android:layout_marginLeft="15dp"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginBottom="10dp">
 
@@ -327,7 +327,7 @@
                         <LinearLayout
                             android:id="@+id/category_card_4"
                             android:layout_width="140dp"
-                            android:layout_height="190dp"
+                            android:layout_height="wrap_content"
                             android:layout_margin="10dp"
                             android:background="@drawable/oval"
                             android:orientation="vertical">
@@ -343,7 +343,7 @@
                                 android:layout_height="40dp"
                                 android:layout_alignParentLeft="true"
                                 android:layout_alignParentBottom="true"
-                                android:layout_marginLeft="15dp"
+                                android:layout_marginLeft="5dp"
                                 android:layout_marginTop="5dp"
                                 android:layout_marginBottom="10dp">
 

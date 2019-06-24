@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,8 +32,10 @@ public class post extends AppCompatActivity {
 
     Intent intent;
 
+    String image;
+
     String name, email, pw;
-    String type, content_name, season;
+    String type, content_name, season, activity, layout;
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference;
@@ -49,8 +52,76 @@ public class post extends AppCompatActivity {
         type = intent.getStringExtra("type");
         content_name = intent.getStringExtra("content_name");
         season = intent.getStringExtra("season");
+        activity = intent.getStringExtra("activity");
+        layout = intent.getStringExtra("layout");
 
         email = email.replace("_", ".");
+
+        close = findViewById(R.id.close);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switch (layout){
+                    case "main":
+                        intent = new Intent(context, MainActivity.class);
+                        break;
+
+                    case "category":
+                        intent = new Intent(context, category.class);
+                        break;
+
+                    case "festival_spring" :
+                        intent = new Intent(context, festival_basic.class);
+                        intent.putExtra("activity", activity);
+                        intent.putExtra("season", "spring");
+                        break;
+
+                    case "festival_summer" :
+                        intent = new Intent(context, festival_basic.class);
+                        intent.putExtra("activity", activity);
+                        intent.putExtra("season", "summer");
+                        break;
+
+                    case "festival_fall" :
+                        intent = new Intent(context, festival_basic.class);
+                        intent.putExtra("activity", activity);
+                        intent.putExtra("season", "fall");
+                        break;
+
+                    case "festival_winter" :
+                        intent = new Intent(context, festival_basic.class);
+                        intent.putExtra("activity", activity);
+                        intent.putExtra("season", "winter");
+                        break;
+
+                    case "sightseeing":
+                        intent = new Intent(context, basic_menu.class);
+                        intent.putExtra("activity", activity);
+                        intent.putExtra("menu_type", "sightseeing");
+                        break;
+
+                    case "stay":
+                        intent = new Intent(context, basic_menu.class);
+                        intent.putExtra("activity", activity);
+                        intent.putExtra("menu_type", "stay");
+                        break;
+
+                    case "food":
+                        intent = new Intent(context, basic_menu.class);
+                        intent.putExtra("activity", activity);
+                        intent.putExtra("menu_type", "food");
+                        break;
+
+                }
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
 
         explane_content = findViewById(R.id.explane);
         post_image = findViewById(R.id.post_image);
@@ -93,7 +164,6 @@ public class post extends AppCompatActivity {
                 break;
 
             case "stay":
-                h_name_layout.setVisibility(View.GONE);
                 period_layout.setVisibility(View.GONE);
                 holiday_layout.setVisibility(View.GONE);
                 break;
@@ -113,8 +183,46 @@ public class post extends AppCompatActivity {
                         period_content.setText(festival.getSeason());
                         tel_content.setText(festival.getTel());
                         time_content.setText(festival.getTime());
+                        image = festival.getImage();
+                        break;
+
+                    case "experience" :
+                        experience experience = dataSnapshot.getValue(experience.class);
+                        explane_content.setText(experience.getExplane());
+                        address_content.setText(experience.getAddress());
+                        time_content.setText(experience.getTime());
+                        price_content.setText(experience.getPrice());
+                        tel_content.setText(experience.getTel());
+                        image = experience.getImage();
+                        break;
+
+                    case "food":
+                        food food = dataSnapshot.getValue(food.class);
+                        explane_content.setText(food.getExplane());
+                        address_content.setText(food.getAddress());
+                        holiday_content.setText(food.getClosed());
+                        site_content.setText(food.getSite());
+                        tel_content.setText(food.getTel());
+                        time_content.setText(food.getTime());
+                        image = food.getImage();
+                        break;
+
+                    case "stay":
+                        hotel hotel = dataSnapshot.getValue(hotel.class);
+                        explane_content.setText(hotel.getExplain());
+                        address_content.setText(hotel.getAddress());
+                        site_content.setText(hotel.getLink());
+                        h_name_content.setText(hotel.getName());
+                        price_content.setText(hotel.getPrice());
+                        tel_content.setText(hotel.getTel());
+                        image = hotel.getImage();
                         break;
                 }
+
+                Glide.with(context)
+                        .load(image)
+                        .override(340,440).centerCrop()
+                        .into(post_image);
             }
 
             @Override
