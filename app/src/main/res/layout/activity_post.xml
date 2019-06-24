@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".post">
+    tools:context=".post"
+    android:background="@drawable/noting">
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -15,14 +16,6 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <ImageButton
-                android:id="@+id/close"
-                android:layout_width="10dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/cancel"/>
 
             <LinearLayout
                 android:id="@+id/linear1"
@@ -38,6 +31,14 @@
 
             </LinearLayout>
 
+            <ImageButton
+                android:id="@+id/close"
+                android:layout_width="10dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/cancel"/>
+
             <LinearLayout
                 android:id="@+id/linear2"
                 android:layout_width="match_parent"
@@ -51,10 +52,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:background="#e1e1e1"
+                    android:padding="5dp"
+                    android:background="@drawable/oval_post"
                     android:paddingTop="10dp"
                     android:text="소개"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:textColor="@color/main"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -104,16 +107,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="이름 : "
-                        android:textSize="8pt" />
+                        android:textSize="6pt"
+                        android:textColor="#000000"/>
 
                     <TextView
                         android:id="@+id/hotel_name_content"
                         android:layout_width="260dp"
                         android:layout_height="wrap_content"
                         android:text="이름 : "
-                        android:textSize="8pt"
+                        android:textSize="6pt"
                         android:gravity="right"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:textColor="#000000"/>
 
                 </RelativeLayout>
 
@@ -128,16 +133,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="개최기간 : "
-                        android:textSize="8pt" />
+                        android:textSize="6pt"
+                        android:textColor="#000000"/>
 
                     <TextView
                         android:id="@+id/period_content"
                         android:layout_width="260dp"
                         android:layout_height="wrap_content"
                         android:text="이름 : "
-                        android:textSize="8pt"
+                        android:textSize="6pt"
                         android:gravity="right"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:textColor="#000000"/>
 
                 </RelativeLayout>
 
@@ -152,16 +159,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="시간 : "
-                        android:textSize="8pt" />
+                        android:textSize="6pt"
+                        android:textColor="#000000"/>
 
                     <TextView
                         android:id="@+id/time_content"
                         android:layout_width="260dp"
                         android:layout_height="wrap_content"
                         android:text="이름 : "
-                        android:textSize="8pt"
+                        android:textSize="6pt"
                         android:gravity="right"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:textColor="#000000"/>
 
                 </RelativeLayout>
 
@@ -176,16 +185,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="휴일 : "
-                        android:textSize="8pt" />
+                        android:textSize="6pt"
+                        android:textColor="#000000"/>
 
                     <TextView
                         android:id="@+id/holiday_content"
                         android:layout_width="260dp"
                         android:layout_height="wrap_content"
                         android:text="이름 : "
-                        android:textSize="8pt"
+                        android:textSize="6pt"
                         android:gravity="right"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:textColor="#000000"/>
 
                 </RelativeLayout>
 
@@ -200,16 +211,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="가격 : "
-                        android:textSize="8pt" />
+                        android:textSize="6pt"
+                        android:textColor="#000000"/>
 
                     <TextView
                         android:id="@+id/price_content"
                         android:layout_width="260dp"
                         android:layout_height="wrap_content"
                         android:text="이름 : "
-                        android:textSize="8pt"
+                        android:textSize="6pt"
                         android:gravity="right"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:textColor="#000000"/>
 
                 </RelativeLayout>
 
@@ -224,16 +237,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="주소 : "
-                        android:textSize="8pt" />
+                        android:textSize="6pt"
+                        android:textColor="#000000"/>
 
                     <TextView
                         android:id="@+id/address_content"
                         android:layout_width="260dp"
                         android:layout_height="wrap_content"
                         android:text="이름 : "
-                        android:textSize="8pt"
+                        android:textSize="6pt"
                         android:gravity="right"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:textColor="#000000"/>
 
                 </RelativeLayout>
 
@@ -248,16 +263,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="전화번호 : "
-                        android:textSize="8pt" />
+                        android:textSize="6pt"
+                        android:textColor="#000000"/>
 
                     <TextView
                         android:id="@+id/tel_content"
                         android:layout_width="260dp"
                         android:layout_height="wrap_content"
                         android:text="이름 : "
-                        android:textSize="8pt"
+                        android:textSize="6pt"
                         android:gravity="right"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:textColor="#000000"/>
 
                 </RelativeLayout>
 
@@ -272,26 +289,59 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="사이트 : "
-                        android:textSize="8pt" />
+                        android:textSize="6pt"
+                        android:textColor="#000000"/>
 
                     <TextView
                         android:id="@+id/site_content"
                         android:layout_width="260dp"
                         android:layout_height="wrap_content"
                         android:text="이름 : "
-                        android:textSize="8pt"
+                        android:textSize="6pt"
                         android:gravity="right"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:textColor="#000000"/>
 
                 </RelativeLayout>
 
             </LinearLayout>
 
-            <ListView
-                android:id="@+id/context_list"
+            <LinearLayout
+                android:id="@+id/reply_layout"
+                android:layout_below="@+id/linear3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linear3">
+                android:layout_margin="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/reply_edit"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:textColor="#000000"/>
+
+                <Button
+                    android:id="@+id/reply_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_margin="5dp"
+                    android:background="@color/main"
+                    android:textColor="#ffffff"
+                    android:text="댓글 달기"/>
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/reply_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reply_layout"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp">
 
             </ListView>
         </RelativeLayout>
