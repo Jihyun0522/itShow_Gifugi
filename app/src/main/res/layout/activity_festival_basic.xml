@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical"
+    android:id="@+id/festival_basic"
     tools:context=".festival_basic">
 
     <include layout="@layout/top_view" />

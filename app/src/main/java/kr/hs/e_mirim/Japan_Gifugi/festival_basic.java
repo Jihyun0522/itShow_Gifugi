@@ -79,8 +79,8 @@ public class festival_basic extends AppCompatActivity {
         email = intent.getStringExtra("email");
         pw = intent.getStringExtra("pw");
         activity = intent.getStringExtra("activity");
-        //season = intent.getStringExtra("season");
-        season = "summer";
+        season = intent.getStringExtra("season");
+//        season = "summer";
 
         fes_1 = (RelativeLayout)findViewById(R.id.fes_1);
         fes_2 = (RelativeLayout)findViewById(R.id.fes_2);
@@ -99,7 +99,7 @@ public class festival_basic extends AppCompatActivity {
             }
         });//search
 
-        festival = findViewById(R.id.list_view);
+        festival = findViewById(R.id.festival_basic);
         festival.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -142,24 +142,28 @@ public class festival_basic extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 season = "spring";
+                season = intent.getStringExtra("season");
             }
         });
         summer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 season = "summer";
+                season = intent.getStringExtra("season");
             }
         });
         fall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                season = "fall";
+                season = "summer";
+                season = intent.getStringExtra("season");
             }
         });
         winter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                season = "winter";
+                season = "summer";
+                season = intent.getStringExtra("season");
             }
         });
 
