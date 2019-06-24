@@ -364,5 +364,21 @@ public class MainActivity extends AppCompatActivity {
                 .override(340,440).centerCrop()
                 /*.transform(new RoundedCornersTransformation(radius, margin))*/
                 .into(imageCard);
+
+        imageCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, basic_menu.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", "main");
+                intent.putExtra("layout", "main");
+                intent.putExtra("menu_type", "food");
+                intent.putExtra("season", "summer");
+                intent.putExtra("content_name", "나가라강 불꽃놀이 대회");
+                intent.putExtra("type", "festival");
+            }
+        });
     }
 }

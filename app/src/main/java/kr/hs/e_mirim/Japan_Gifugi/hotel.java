@@ -1,19 +1,20 @@
 package kr.hs.e_mirim.Japan_Gifugi;
 
 public class hotel {
-    String address, explain, link, name, price, tel;
+    String address, explain, link, name, price, tel, image;
 
     public hotel() {
 
     }
 
-    public hotel(String address, String explain, String link, String name, String price, String tel){
+    public hotel(String address, String explain, String link, String name, String price, String tel, String image){
         this.address = address;
         this.explain = explain;
         this.link = link;
         this.name = name;
         this.price = price;
         this.tel = tel;
+        this.image = image;
     }
 
     public String getAddress() {
@@ -38,5 +39,9 @@ public class hotel {
 
     public String getTel() {
         return tel;
+    }
+
+    public String getImage() {
+        return image;
     }
 }
