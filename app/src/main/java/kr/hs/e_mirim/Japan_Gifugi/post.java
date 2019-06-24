@@ -170,7 +170,6 @@ public class post extends AppCompatActivity {
                 break;
         }
 
-        /*if(type.equals("festival")) databaseReference = firebaseDatabase.getReference().child(type + "/" + content_name + "/" + season);*/
         if(type.equals("festival")) databaseReference = firebaseDatabase.getReference().child("content").child(type).child(season);
         else databaseReference = firebaseDatabase.getReference().child(type);
 
@@ -226,7 +225,7 @@ public class post extends AppCompatActivity {
 
                 Glide.with(context)
                         .load(image)
-                        .override(340,440).centerCrop()
+                        .override(340,300).centerCrop()
                         .into(post_image);
             }
 

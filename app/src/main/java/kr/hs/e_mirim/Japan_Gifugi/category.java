@@ -88,6 +88,8 @@ public class category extends AppCompatActivity {
     }
     String season;
 
+    LinearLayout card_view1, card_view2, card_view3, card_view4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -366,6 +368,83 @@ public class category extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        card_view1 = findViewById(R.id.category_card_1);
+        card_view1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", "category");
+                intent.putExtra("layout", "category");
+                intent.putExtra("season", "summer");
+                intent.putExtra("content_name", "나가라강 불꽃놀이 대회");
+                intent.putExtra("type", "festival");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+        card_view2 = findViewById(R.id.category_card_2);
+        card_view2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", "category");
+                intent.putExtra("layout", "category");
+                intent.putExtra("season", "summer");
+                intent.putExtra("content_name", "게로 온천");
+                intent.putExtra("type", "experience");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+        card_view3 = findViewById(R.id.category_card_3);
+        card_view3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", "category");
+                intent.putExtra("layout", "category");
+                intent.putExtra("season", "summer");
+                intent.putExtra("content_name", "가와라야");
+                intent.putExtra("type", "food");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+        card_view4 = findViewById(R.id.category_card_4);
+        card_view4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", "category");
+                intent.putExtra("layout", "category");
+                intent.putExtra("season", "summer");
+                intent.putExtra("content_name", "식품샘플 제작");
+                intent.putExtra("type", "experience");
+
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

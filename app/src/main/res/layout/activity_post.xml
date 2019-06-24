@@ -17,14 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageButton
-                android:id="@+id/close"
-                android:layout_width="10dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="10dp"
-                android:background="@drawable/cancel"/>
-
             <LinearLayout
                 android:id="@+id/linear1"
                 android:layout_width="match_parent"
@@ -38,6 +30,14 @@
                     android:scaleType="centerCrop"/>
 
             </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/close"
+                android:layout_width="10dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/cancel"/>
 
             <LinearLayout
                 android:id="@+id/linear2"

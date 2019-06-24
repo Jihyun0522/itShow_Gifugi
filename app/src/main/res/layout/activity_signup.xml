@@ -105,7 +105,8 @@
                 android:hint="password"
                 android:textSize="12dp"
                 android:singleLine="true"
-                android:lines="1"/>
+                android:lines="1"
+                android:password="true"/>
 
         </RelativeLayout>
 
