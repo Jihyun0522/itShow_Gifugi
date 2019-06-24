@@ -44,6 +44,7 @@ public class post extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_post);
+        context = this;
 
         intent = getIntent();
         name = intent.getStringExtra("name");
@@ -169,12 +170,14 @@ public class post extends AppCompatActivity {
                 break;
         }
 
-        databaseReference = firebaseDatabase.getReference().child(type + "/" + content_name);
-        if(type.equals("festival")) databaseReference.child(season);
-        databaseReference.addChildEventListener(new ChildEventListener() {
+        /*if(type.equals("festival")) databaseReference = firebaseDatabase.getReference().child(type + "/" + content_name + "/" + season);*/
+        if(type.equals("festival")) databaseReference = firebaseDatabase.getReference().child("content").child(type).child(season);
+        else databaseReference = firebaseDatabase.getReference().child(type);
+
+        databaseReference.orderByKey().equalTo(content_name).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                switch ("type"){
+                switch (type){
                     case "festival":
                         festival festival = dataSnapshot.getValue(festival.class);
                         explane_content.setText(festival.getExplane());
@@ -184,6 +187,8 @@ public class post extends AppCompatActivity {
                         tel_content.setText(festival.getTel());
                         time_content.setText(festival.getTime());
                         image = festival.getImage();
+
+                        Log.i("TAG: value is ",  image);
                         break;
 
                     case "experience" :

@@ -368,7 +368,7 @@ public class MainActivity extends AppCompatActivity {
         imageCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(context, basic_menu.class);
+                intent = new Intent(context, post.class);
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
@@ -378,6 +378,10 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("season", "summer");
                 intent.putExtra("content_name", "나가라강 불꽃놀이 대회");
                 intent.putExtra("type", "festival");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
             }
         });
     }
