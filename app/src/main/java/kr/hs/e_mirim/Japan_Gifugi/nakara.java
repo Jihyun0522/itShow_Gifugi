@@ -2,19 +2,15 @@ package kr.hs.e_mirim.Japan_Gifugi;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
-import android.widget.Switch;
 import android.widget.TextView;
 
-public class basic_menu extends AppCompatActivity {
+public class nakara extends AppCompatActivity {
     Context context;
     Intent intent;
 
@@ -23,16 +19,12 @@ public class basic_menu extends AppCompatActivity {
     TextView menu_text;
     RelativeLayout back;
 
-    String menu, name, email, pw, activity;
-
-    Switch changeLayout;
-    LinearLayout card_view;
-    LinearLayout list_view;
+    String name, email, pw, activity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_basic_menu);
+        setContentView(R.layout.nakara);
         context = this;
 
         intent = getIntent();
@@ -40,48 +32,29 @@ public class basic_menu extends AppCompatActivity {
         email = intent.getStringExtra("email");
         pw = intent.getStringExtra("pw");
         activity = intent.getStringExtra("activity");
-        menu = intent.getStringExtra("menu_type");
 
-        menu_text = findViewById(R.id.top_view_text);
-
-        switch (menu){
-            case "sightseeing":
-                menu_text.setText("EXPERIENCE");
-                break;
-
-            case "stay":
-                menu_text.setText("STAY");
-                break;
-
-            case "food":
-                menu_text.setText("FOOD");
-                break;
-        }
+        menu_text = (TextView)findViewById(R.id.top_view_text);
+        menu_text.setText("FESTIVAL");
 
         search = (ImageButton)findViewById(R.id.btn_search);
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, search.class);
+                intent = new Intent(context, search.class);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
-        });
+        });//search
 
         back = (RelativeLayout) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (activity){
-                    case "main" :
-                        intent = new Intent(context, MainActivity.class);
-                        break;
-
-                    case "category" :
-                        intent = new Intent(context, category.class);
-                        break;
+                if (activity.equals("category")) {
+                    intent = new Intent(context, category.class);
+                } else if(activity.equals("main")){
+                    intent = new Intent(context, MainActivity.class);
                 }
-
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
@@ -90,9 +63,7 @@ public class basic_menu extends AppCompatActivity {
 
                 finish();
             }
-        });
+        });//back
 
-        list_view = findViewById(R.id.list_view);
-
-    }
-}
+    }//oncreate
+}//nakara

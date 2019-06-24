@@ -45,6 +45,8 @@ public class festival_basic extends AppCompatActivity {
 
     LinearLayout list_view;
 
+    LinearLayout festival;
+
 /*
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReference;
@@ -90,6 +92,21 @@ public class festival_basic extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             }
         });//search
+
+        festival = findViewById(R.id.list_view);
+        festival.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, nakara.class);
+                intent.putExtra("activity", "category");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("season", season);
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+            }
+        });
 
         back = (RelativeLayout) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
