@@ -5,7 +5,9 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -43,15 +45,19 @@ public class festival_basic extends AppCompatActivity {
 
     LinearLayout list_view;
 
+/*
     private FirebaseDatabase mDatabase;
     private DatabaseReference mReference;
     private ChildEventListener mChild;
 
-    private ListView listView;
     private ArrayAdapter<String> adapter;
     List<Object> Array = new ArrayList<>();
-
+*/
     String name, email, pw, activity, season;
+
+    ListView list_item;
+    String[] festival_item = {"나가라강 불꽃놀이 대회"};
+    listAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,15 +65,21 @@ public class festival_basic extends AppCompatActivity {
         setContentView(R.layout.activity_festival_basic);
         context = this;
 
+        list_item = (ListView)findViewById(R.id.list_item);
+        adapter = new listAdapter();
+        list_item.setAdapter(adapter);
+
+        list_view = findViewById(R.id.list_view); //linear layout
         intent = getIntent();
         name = intent.getStringExtra("name");
         email = intent.getStringExtra("email");
         pw = intent.getStringExtra("pw");
         activity = intent.getStringExtra("activity");
-        season = intent.getStringExtra("season");
+        //season = intent.getStringExtra("season");
 
         menu_text = (TextView) findViewById(R.id.top_view_text);
         menu_text.setText("FESTIVAL");
+
 
         search = (ImageButton)findViewById(R.id.btn_search);
         search.setOnClickListener(new View.OnClickListener() {
@@ -103,7 +115,7 @@ public class festival_basic extends AppCompatActivity {
         fall = findViewById(R.id.f_fall);
         winter = findViewById(R.id.f_winter);
 
-        switch (season) {
+        /*switch (season) {
             case "spring":
                 spring.setImageResource(R.drawable.on_spring);
                 summer.setImageResource(R.drawable.un_summer);
@@ -111,12 +123,12 @@ public class festival_basic extends AppCompatActivity {
                 winter.setImageResource(R.drawable.un_winter);
                 break;
 
-            case "summer":
+            case "summer":*/
                 spring.setImageResource(R.drawable.un_spring);
                 summer.setImageResource(R.drawable.on_summer);
                 fall.setImageResource(R.drawable.un_fall);
                 winter.setImageResource(R.drawable.un_winter);
-                break;
+            /*    break;
 
             case "fall":
                 spring.setImageResource(R.drawable.un_spring);
@@ -132,13 +144,10 @@ public class festival_basic extends AppCompatActivity {
                 winter.setImageResource(R.drawable.on_winter);
                 break;
         }
+*/
 
 
-
-        list_view = findViewById(R.id.list_view);
-
-        listView = (ListView) findViewById(R.id.list_item);
-
+        /*
         initDatabase();
 
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());
@@ -164,9 +173,33 @@ public class festival_basic extends AppCompatActivity {
 
             }
         });
-
+*/
     }//oncreate
 
+    class listAdapter extends BaseAdapter{
+        @Override
+        public int getCount(){
+            return festival_item.length;
+        }
+
+        @Override
+        public Object getItem(int position){
+            return festival_item[position];
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
+        }
+
+        @Override
+        public View getView(int position, View convertView, ViewGroup parent) {
+            TextView view = new TextView(getApplicationContext());
+            view.setText(festival_item[position]);
+            return view;
+        }
+    }//listadapter
+/*
     private void initDatabase() {
 
         mDatabase = FirebaseDatabase.getInstance();
@@ -208,4 +241,5 @@ public class festival_basic extends AppCompatActivity {
         super.onDestroy();
         mReference.removeEventListener(mChild);
     }
+    */
 }
