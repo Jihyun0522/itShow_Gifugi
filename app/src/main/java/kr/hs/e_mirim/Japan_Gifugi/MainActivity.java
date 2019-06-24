@@ -374,7 +374,6 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("pw", pw);
                 intent.putExtra("activity", "main");
                 intent.putExtra("layout", "main");
-                intent.putExtra("menu_type", "food");
                 intent.putExtra("season", "summer");
                 intent.putExtra("content_name", "나가라강 불꽃놀이 대회");
                 intent.putExtra("type", "festival");
