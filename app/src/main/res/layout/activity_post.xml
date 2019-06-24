@@ -306,11 +306,37 @@
 
             </LinearLayout>
 
-            <ListView
-                android:id="@+id/context_list"
+            <LinearLayout
+                android:id="@+id/reply_layout"
+                android:layout_below="@+id/linear3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/linear3">
+                android:layout_margin="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/reply_edit"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"/>
+
+                <Button
+                    android:id="@+id/reply_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:background="@color/main"
+                    android:textColor="#ffffff"
+                    android:text="댓글 달기"/>
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/reply_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reply_layout">
 
             </ListView>
         </RelativeLayout>

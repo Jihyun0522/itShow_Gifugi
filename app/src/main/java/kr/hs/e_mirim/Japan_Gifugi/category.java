@@ -405,7 +405,7 @@ public class category extends AppCompatActivity {
                 intent.putExtra("layout", "category");
                 intent.putExtra("season", "summer");
                 intent.putExtra("content_name", "게로 온천");
-                intent.putExtra("type", "experience");
+                intent.putExtra("type", "activity");
 
                 startActivity(intent);
                 overridePendingTransition(0, 0);
@@ -443,7 +443,7 @@ public class category extends AppCompatActivity {
                 intent.putExtra("layout", "category");
                 intent.putExtra("season", "summer");
                 intent.putExtra("content_name", "식품샘플 제작");
-                intent.putExtra("type", "experience");
+                intent.putExtra("type", "activity");
 
                 startActivity(intent);
                 overridePendingTransition(0, 0);

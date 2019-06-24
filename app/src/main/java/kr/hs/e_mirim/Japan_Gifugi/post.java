@@ -8,8 +8,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -20,6 +24,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class post extends AppCompatActivity {
     RelativeLayout h_name_layout, period_layout, time_layout, holiday_layout, price_layout, tel_layout, site_layout;
@@ -39,6 +46,16 @@ public class post extends AppCompatActivity {
 
     private FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
     private DatabaseReference databaseReference;
+
+    ListView reply_list;
+    EditText reply_edit;
+    Button reply_btn;
+    private ArrayAdapter<String> adapter;
+    List<Object> Array = new ArrayList<Object>();
+
+    private FirebaseDatabase mDatabase;
+    private DatabaseReference mReference;
+    private ChildEventListener mChild;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -152,7 +169,7 @@ public class post extends AppCompatActivity {
                 site_layout.setVisibility(View.GONE);
                 break;
 
-            case "experience":
+            case "activity":
                 h_name_layout.setVisibility(View.GONE);
                 period_layout.setVisibility(View.GONE);
                 holiday_layout.setVisibility(View.GONE);
@@ -162,6 +179,7 @@ public class post extends AppCompatActivity {
             case "food":
                 h_name_layout.setVisibility(View.GONE);
                 period_layout.setVisibility(View.GONE);
+                price_layout.setVisibility(View.GONE);
                 break;
 
             case "stay":
@@ -171,7 +189,7 @@ public class post extends AppCompatActivity {
         }
 
         if(type.equals("festival")) databaseReference = firebaseDatabase.getReference().child("content").child(type).child(season);
-        else databaseReference = firebaseDatabase.getReference().child(type);
+        else databaseReference = firebaseDatabase.getReference().child("content").child(type);
 
         databaseReference.orderByKey().equalTo(content_name).addChildEventListener(new ChildEventListener() {
             @Override
@@ -190,7 +208,7 @@ public class post extends AppCompatActivity {
                         Log.i("TAG: value is ",  image);
                         break;
 
-                    case "experience" :
+                    case "activity" :
                         experience experience = dataSnapshot.getValue(experience.class);
                         explane_content.setText(experience.getExplane());
                         address_content.setText(experience.getAddress());
@@ -249,5 +267,81 @@ public class post extends AppCompatActivity {
 
             }
         });
+
+        reply_list = findViewById(R.id.reply_list);
+        reply_edit = findViewById(R.id.reply_edit);
+        reply_btn = findViewById(R.id.reply_btn);
+
+        initDatabase();
+
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());
+        reply_list.setAdapter(adapter);
+
+        if(type.equals("festival")) mReference = mDatabase.getReference().child("content").child(type).child(season);
+        else mReference = mDatabase.getReference().child("content").child(type);
+
+        mReference.child(content_name).child("reply").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                adapter.clear();
+                for(DataSnapshot snapshot: dataSnapshot.getChildren()) {
+
+                    String msg2 = snapshot.getValue().toString();
+                    Array.add(msg2);
+                    adapter.add(msg2);
+                }
+                adapter.notifyDataSetChanged();
+                reply_list.setSelection(adapter.getCount() - 1);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        reply_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                databaseReference.child(content_name).child("reply").push().setValue(name + " - " + reply_edit.getText().toString());
+                reply_edit.setText("");
+            }
+        });
+    }
+
+    private void initDatabase() {
+
+        mDatabase = FirebaseDatabase.getInstance();
+
+        mReference = mDatabase.getReference("log");
+        mReference.child("log").setValue("check");
+
+        mChild = new ChildEventListener() {
+
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        };
+        mReference.addChildEventListener(mChild);
     }
 }
