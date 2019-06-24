@@ -43,7 +43,12 @@ public class festival_basic extends AppCompatActivity {
     ImageButton fall;
     ImageButton winter;
 
-    LinearLayout list_view;
+    ImageView festival_list_img_1, festival_list_img_2, festival_list_img_3;
+    TextView festival_list_name_1, festival_list_name_2, festival_list_name_3;
+    TextView festival_list_area_1, festival_list_area_2, festival_list_area_3;
+    TextView festival_list_season_1, festival_list_season_2, festival_list_season_3;
+
+    RelativeLayout fes_1, fes_2, fes_3;
 
 /*
     private FirebaseDatabase mDatabase;
@@ -55,9 +60,11 @@ public class festival_basic extends AppCompatActivity {
 */
     String name, email, pw, activity, season;
 
-    ListView list_item;
-    String[] festival_item = {"나가라강 불꽃놀이 대회"};
-    listAdapter adapter;
+    String[] festival_item_spring = {"데지카라 불축제", "도산 축제", "봄의 다카야마축제"};
+    String[] festival_item_summer = {"나가라강 불꽃놀이 대회"};
+    String[] festival_item_fall = {"가을의 다카야마축제", "기후 노부나가 축제"};
+    String[] festival_item_winter = {"이케노우에 미소기 축제"};
+    //listAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,21 +72,20 @@ public class festival_basic extends AppCompatActivity {
         setContentView(R.layout.activity_festival_basic);
         context = this;
 
-        list_item = (ListView)findViewById(R.id.list_item);
-        adapter = new listAdapter();
-        list_item.setAdapter(adapter);
-
-        list_view = findViewById(R.id.list_view); //linear layout
         intent = getIntent();
         name = intent.getStringExtra("name");
         email = intent.getStringExtra("email");
         pw = intent.getStringExtra("pw");
         activity = intent.getStringExtra("activity");
         //season = intent.getStringExtra("season");
+        season = "summer";
+
+        fes_1 = (RelativeLayout)findViewById(R.id.fes_1);
+        fes_2 = (RelativeLayout)findViewById(R.id.fes_2);
+        fes_3 = (RelativeLayout)findViewById(R.id.fes_3);
 
         menu_text = (TextView) findViewById(R.id.top_view_text);
         menu_text.setText("FESTIVAL");
-
 
         search = (ImageButton)findViewById(R.id.btn_search);
         search.setOnClickListener(new View.OnClickListener() {
@@ -110,12 +116,37 @@ public class festival_basic extends AppCompatActivity {
             }
         });//back
 
-        spring = findViewById(R.id.f_spring);
-        summer = findViewById(R.id.f_summer);
-        fall = findViewById(R.id.f_fall);
-        winter = findViewById(R.id.f_winter);
+        spring = (ImageButton)findViewById(R.id.f_spring);
+        summer = (ImageButton)findViewById(R.id.f_summer);
+        fall = (ImageButton)findViewById(R.id.f_fall);
+        winter = (ImageButton)findViewById(R.id.f_winter);
 
-        /*switch (season) {
+        spring.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                season = "spring";
+            }
+        });
+        summer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                season = "summer";
+            }
+        });
+        fall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                season = "fall";
+            }
+        });
+        winter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                season = "winter";
+            }
+        });
+
+        switch (season) {
             case "spring":
                 spring.setImageResource(R.drawable.on_spring);
                 summer.setImageResource(R.drawable.un_summer);
@@ -123,12 +154,12 @@ public class festival_basic extends AppCompatActivity {
                 winter.setImageResource(R.drawable.un_winter);
                 break;
 
-            case "summer":*/
+            case "summer":
                 spring.setImageResource(R.drawable.un_spring);
                 summer.setImageResource(R.drawable.on_summer);
                 fall.setImageResource(R.drawable.un_fall);
                 winter.setImageResource(R.drawable.un_winter);
-            /*    break;
+               break;
 
             case "fall":
                 spring.setImageResource(R.drawable.un_spring);
@@ -143,9 +174,97 @@ public class festival_basic extends AppCompatActivity {
                 fall.setImageResource(R.drawable.un_fall);
                 winter.setImageResource(R.drawable.on_winter);
                 break;
-        }
-*/
+        }//btn_switch
 
+        switch (season) {
+            case "spring":
+                festival_list_name_1 = (TextView)findViewById(R.id.festival_list_name_1);
+                festival_list_name_1.setText(festival_item_spring[0]);
+                festival_list_name_2 = (TextView)findViewById(R.id.festival_list_name_2);
+                festival_list_name_2.setText(festival_item_spring[1]);
+                festival_list_name_3 = (TextView)findViewById(R.id.festival_list_name_3);
+                festival_list_name_3.setText(festival_item_spring[2]);
+
+                festival_list_img_1 = (ImageView) findViewById(R.id.festival_list_img_1);
+                festival_list_img_1.setImageResource(R.drawable.dejikara);
+                festival_list_img_2 = (ImageView)findViewById(R.id.festival_list_img_2);
+                festival_list_img_2.setImageResource(R.drawable.dosan);
+                festival_list_img_3 = (ImageView)findViewById(R.id.festival_list_img_3);
+                festival_list_img_3.setImageResource(R.drawable.dakayama_spring);
+
+                festival_list_area_1 = (TextView)findViewById(R.id.festival_list_area_1);
+                festival_list_area_1.setText("지역");
+                festival_list_area_2 = (TextView)findViewById(R.id.festival_list_area_2);
+                festival_list_area_2.setText("지역");
+                festival_list_area_3 = (TextView)findViewById(R.id.festival_list_area_3);
+                festival_list_area_3.setText("지역");
+
+                festival_list_season_1 = (TextView)findViewById(R.id.festival_list_season_1);
+                festival_list_season_1.setText("春");
+                festival_list_season_2 = (TextView)findViewById(R.id.festival_list_season_2);
+                festival_list_season_2.setText("春");
+                festival_list_season_3 = (TextView)findViewById(R.id.festival_list_season_3);
+                festival_list_season_3.setText("春");
+                break;
+
+            case "summer":
+                festival_list_name_1 = (TextView)findViewById(R.id.festival_list_name_1);
+                festival_list_name_1.setText(festival_item_summer[0]);
+
+                festival_list_img_1 = (ImageView) findViewById(R.id.festival_list_img_1);
+                festival_list_img_1.setImageResource(R.drawable.hanabi);
+
+                festival_list_area_1 = (TextView)findViewById(R.id.festival_list_area_1);
+                festival_list_area_1.setText("지역");
+
+                festival_list_season_1 = (TextView)findViewById(R.id.festival_list_season_1);
+                festival_list_season_1.setText("夏");
+
+                fes_2.setVisibility(View.GONE);
+                fes_3.setVisibility(View.GONE);
+                break;
+
+            case "fall":
+                festival_list_name_1 = (TextView)findViewById(R.id.festival_list_name_1);
+                festival_list_name_1.setText(festival_item_fall[0]);
+                festival_list_name_2 = (TextView)findViewById(R.id.festival_list_name_2);
+                festival_list_name_2.setText(festival_item_fall[1]);
+
+                festival_list_img_1 = (ImageView) findViewById(R.id.festival_list_img_1);
+                festival_list_img_1.setImageResource(R.drawable.dakayama_fall);
+                festival_list_img_2 = (ImageView)findViewById(R.id.festival_list_img_2);
+                festival_list_img_2.setImageResource(R.drawable.nobunaga);
+
+                festival_list_area_1 = (TextView)findViewById(R.id.festival_list_area_1);
+                festival_list_area_1.setText("지역");
+                festival_list_area_2 = (TextView)findViewById(R.id.festival_list_area_2);
+                festival_list_area_2.setText("지역");
+
+                festival_list_season_1 = (TextView)findViewById(R.id.festival_list_season_1);
+                festival_list_season_1.setText("秋");
+                festival_list_season_2 = (TextView)findViewById(R.id.festival_list_season_2);
+                festival_list_season_2.setText("秋");
+
+                fes_3.setVisibility(View.GONE);
+                break;
+
+            case "winter":
+                festival_list_name_1 = (TextView)findViewById(R.id.festival_list_name_1);
+                festival_list_name_1.setText(festival_item_winter[0]);
+
+                festival_list_img_1 = (ImageView) findViewById(R.id.festival_list_img_1);
+                festival_list_img_1.setImageResource(R.drawable.ikenoue);
+
+                festival_list_area_1 = (TextView)findViewById(R.id.festival_list_area_1);
+                festival_list_area_1.setText("지역");
+
+                festival_list_season_1 = (TextView)findViewById(R.id.festival_list_season_1);
+                festival_list_season_1.setText("冬");
+
+                fes_2.setVisibility(View.GONE);
+                fes_3.setVisibility(View.GONE);
+                break;
+        }//switch
 
         /*
         initDatabase();
@@ -175,7 +294,7 @@ public class festival_basic extends AppCompatActivity {
         });
 */
     }//oncreate
-
+/*
     class listAdapter extends BaseAdapter{
         @Override
         public int getCount(){
@@ -199,6 +318,7 @@ public class festival_basic extends AppCompatActivity {
             return view;
         }
     }//listadapter
+    */
 /*
     private void initDatabase() {
 
