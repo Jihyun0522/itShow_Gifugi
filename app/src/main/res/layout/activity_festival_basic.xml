@@ -29,14 +29,18 @@
                 android:layout_height="60dp"
                 android:layout_marginRight="20dp"
                 android:layout_toLeftOf="@+id/f_center"
-                android:background="@drawable/on_spring" />
+                android:background="@drawable/on_spring"
+                android:padding="0sp"
+                android:scaleType="centerCrop"/>
 
             <ImageButton
                 android:id="@+id/f_summer"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/un_summer" />
+                android:background="@drawable/un_summer"
+                android:padding="0sp"
+                android:scaleType="centerCrop"/>
 
 
             <ImageButton
@@ -44,7 +48,9 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/un_fall" />
+                android:background="@drawable/un_fall"
+                android:padding="0sp"
+                android:scaleType="centerCrop"/>
 
 
             <ImageButton
@@ -53,7 +59,9 @@
                 android:layout_height="60dp"
                 android:layout_marginLeft="20dp"
                 android:layout_toRightOf="@+id/f_center"
-                android:background="@drawable/un_winter" />
+                android:background="@drawable/un_winter"
+                android:padding="0sp"
+                android:scaleType="centerCrop"/>
 
         </LinearLayout>
 
