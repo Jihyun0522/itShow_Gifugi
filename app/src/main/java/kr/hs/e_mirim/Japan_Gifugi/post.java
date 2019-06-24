@@ -274,7 +274,7 @@ public class post extends AppCompatActivity {
 
         initDatabase();
 
-        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line, new ArrayList<String>());
+        adapter = new ArrayAdapter<String>(this, R.layout.list_reply, new ArrayList<String>());
         reply_list.setAdapter(adapter);
 
         if(type.equals("festival")) mReference = mDatabase.getReference().child("content").child(type).child(season);
