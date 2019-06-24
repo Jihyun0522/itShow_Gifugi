@@ -69,6 +69,23 @@ public class category extends AppCompatActivity {
 
     ProgressDialog progressDialog;
 
+    long mNow;
+    Date mDate;
+    SimpleDateFormat mFormat;
+
+    //오늘의 달
+    private int getMonth() {
+        int m = 0;
+        mFormat = new SimpleDateFormat("MM");
+
+        mNow = System.currentTimeMillis();
+        mDate = new Date(mNow);
+        m = Integer.parseInt(mFormat.format(mDate));
+
+        return m;
+    }
+    String season;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,6 +108,32 @@ public class category extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.c_drawerLayout);
         //drawer 참조
         drawerView = (View) findViewById(R.id.drawer_menu);
+
+        switch (getMonth()){
+            case 3:
+            case 4:
+            case 5:
+                season = "spring";
+                break;
+
+            case 6:
+            case 7:
+            case 8:
+                season = "summer";
+                break;
+
+            case 9:
+            case 10:
+            case 11:
+                season = "fall";
+                break;
+
+            case 12:
+            case 1:
+            case 2:
+                season = "winter";
+                break;
+        }
 
         // 드로어 여는 버튼 리스너
         buttonOpenDrawer = (ImageButton) findViewById(R.id.opendrawer);
@@ -147,6 +190,7 @@ public class category extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", season);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
             }
@@ -207,6 +251,7 @@ public class category extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", season);
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -222,6 +267,7 @@ public class category extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", "spring");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -237,6 +283,7 @@ public class category extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", "summer");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -252,6 +299,7 @@ public class category extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", "fall");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();
@@ -267,6 +315,7 @@ public class category extends AppCompatActivity {
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
                 intent.putExtra("pw", pw);
+                intent.putExtra("season", "winter");
                 startActivity(intent);
                 overridePendingTransition(0, 0);
                 finish();

@@ -133,6 +133,8 @@ public class festival_basic extends AppCompatActivity {
                 break;
         }
 
+
+
         list_view = findViewById(R.id.list_view);
 
         listView = (ListView) findViewById(R.id.list_item);
