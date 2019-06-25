@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".Foodlist"></activity>
+        <activity android:name=".Actlist"></activity>
+        <activity android:name=".Foodlist" />
         <activity android:name=".post" /> <!-- Splash -->
         <activity
             android:name=".SplashActivity"
