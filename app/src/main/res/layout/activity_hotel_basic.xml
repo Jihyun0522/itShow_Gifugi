@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    android:id="@+id/hotel_basic"
+    >
+
+    <include layout="@layout/top_view" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/hot_1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/uncheck"  />
+
+        <ImageView
+            android:id="@+id/hotel_list_img1"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="180dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hotel_list_name1"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="이름"
+                android:textColor="@color/uncheck_dark"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:background="@color/uncheck" />
+
+    </RelativeLayout> <!-- 여기까지 1번 -->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/hot_2"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/uncheck" />
+
+        <ImageView
+            android:id="@+id/hotel_list_img2"
+            android:layout_width="160dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="180dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hotel_list_name2"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="이름"
+                android:textColor="@color/uncheck_dark"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:background="@color/uncheck"  />
+
+    </RelativeLayout> <!-- 여기까지 2번 -->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/hot_3"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/uncheck" />
+
+        <ImageView
+            android:id="@+id/hotel_list_img3"
+            android:layout_width="160dp"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="180dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hotel_list_name3"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="이름"
+                android:textColor="@color/uncheck_dark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:background="@color/uncheck" />
+
+    </RelativeLayout> <!-- 여기까지 3번 -->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/hot_4"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/uncheck" />
+
+        <ImageView
+            android:id="@+id/hotel_list_img4"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="180dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hotel_list_name4"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="이름"
+                android:textColor="@color/uncheck_dark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:background="@color/uncheck" />
+
+    </RelativeLayout> <!-- 여기까지 4번 -->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/hot_5"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/uncheck" />
+
+        <ImageView
+            android:id="@+id/hotel_list_img5"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="180dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hotel_list_name5"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="이름"
+                android:textColor="@color/uncheck_dark"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:background="@color/uncheck" />
+
+    </RelativeLayout>  <!-- 여기까지 5번 -->
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/hot_6"
+        android:layout_width="match_parent"
+        android:layout_height="80dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/uncheck" />
+
+        <ImageView
+            android:id="@+id/hotel_list_img6"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"/>
+
+        <LinearLayout
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="180dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/hotel_list_name6"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="이름"
+                android:textColor="@color/uncheck_dark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp"
+            android:background="@color/uncheck" />
+
+    </RelativeLayout>  <!-- 여기까지 6번 -->
+
+</LinearLayout>

@@ -45,7 +45,6 @@ public class festival_basic extends AppCompatActivity {
 
     ImageView festival_list_img_1, festival_list_img_2, festival_list_img_3;
     TextView festival_list_name_1, festival_list_name_2, festival_list_name_3;
-    TextView festival_list_area_1, festival_list_area_2, festival_list_area_3;
     TextView festival_list_season_1, festival_list_season_2, festival_list_season_3;
 
     RelativeLayout fes_1, fes_2, fes_3;
@@ -69,17 +68,17 @@ public class festival_basic extends AppCompatActivity {
     //listAdapter adapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_festival_basic);
-        context = this;
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_festival_basic);
+            context = this;
 
-        intent = getIntent();
-        name = intent.getStringExtra("name");
-        email = intent.getStringExtra("email");
-        pw = intent.getStringExtra("pw");
-        activity = intent.getStringExtra("activity");
-        season = intent.getStringExtra("season");
+            intent = getIntent();
+            name = intent.getStringExtra("name");
+            email = intent.getStringExtra("email");
+            pw = intent.getStringExtra("pw");
+            activity = intent.getStringExtra("activity");
+            season = intent.getStringExtra("season");
 //        season = "summer";
 
         fes_1 = (RelativeLayout)findViewById(R.id.fes_1);
@@ -103,7 +102,7 @@ public class festival_basic extends AppCompatActivity {
         festival.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(context, nakara.class);
+                intent = new Intent(context, festival_basic.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("name", name);
                 intent.putExtra("email", email);
@@ -213,13 +212,6 @@ public class festival_basic extends AppCompatActivity {
                 festival_list_img_3 = (ImageView)findViewById(R.id.festival_list_img_3);
                 festival_list_img_3.setImageResource(R.drawable.dakayama_spring);
 
-                festival_list_area_1 = (TextView)findViewById(R.id.festival_list_area_1);
-                festival_list_area_1.setText("지역");
-                festival_list_area_2 = (TextView)findViewById(R.id.festival_list_area_2);
-                festival_list_area_2.setText("지역");
-                festival_list_area_3 = (TextView)findViewById(R.id.festival_list_area_3);
-                festival_list_area_3.setText("지역");
-
                 festival_list_season_1 = (TextView)findViewById(R.id.festival_list_season_1);
                 festival_list_season_1.setText("春");
                 festival_list_season_2 = (TextView)findViewById(R.id.festival_list_season_2);
@@ -234,9 +226,6 @@ public class festival_basic extends AppCompatActivity {
 
                 festival_list_img_1 = (ImageView) findViewById(R.id.festival_list_img_1);
                 festival_list_img_1.setImageResource(R.drawable.hanabi);
-
-                festival_list_area_1 = (TextView)findViewById(R.id.festival_list_area_1);
-                festival_list_area_1.setText("지역");
 
                 festival_list_season_1 = (TextView)findViewById(R.id.festival_list_season_1);
                 festival_list_season_1.setText("夏");
@@ -256,11 +245,6 @@ public class festival_basic extends AppCompatActivity {
                 festival_list_img_2 = (ImageView)findViewById(R.id.festival_list_img_2);
                 festival_list_img_2.setImageResource(R.drawable.nobunaga);
 
-                festival_list_area_1 = (TextView)findViewById(R.id.festival_list_area_1);
-                festival_list_area_1.setText("지역");
-                festival_list_area_2 = (TextView)findViewById(R.id.festival_list_area_2);
-                festival_list_area_2.setText("지역");
-
                 festival_list_season_1 = (TextView)findViewById(R.id.festival_list_season_1);
                 festival_list_season_1.setText("秋");
                 festival_list_season_2 = (TextView)findViewById(R.id.festival_list_season_2);
@@ -275,9 +259,6 @@ public class festival_basic extends AppCompatActivity {
 
                 festival_list_img_1 = (ImageView) findViewById(R.id.festival_list_img_1);
                 festival_list_img_1.setImageResource(R.drawable.ikenoue);
-
-                festival_list_area_1 = (TextView)findViewById(R.id.festival_list_area_1);
-                festival_list_area_1.setText("지역");
 
                 festival_list_season_1 = (TextView)findViewById(R.id.festival_list_season_1);
                 festival_list_season_1.setText("冬");

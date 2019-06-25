@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -80,14 +81,14 @@
             android:id="@+id/festival_list_img_1"
             android:layout_width="160dp"
             android:layout_height="match_parent" />
-
+<!--
         <ImageView
             android:id="@+id/festival_list_keep_1"
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:layout_margin="8dp"
             android:background="@drawable/keep" />
-
+-->
         <LinearLayout
             android:layout_width="160dp"
             android:layout_height="60dp"
@@ -102,18 +103,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:text="축제"
-                android:textColor="@color/uncheck_dark"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/festival_list_area_1"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:text="지역"
-                android:textColor="@color/uncheck"
-                android:textSize="15dp" />
+                android:textColor="@color/uncheck_dark"/>
 
         </LinearLayout>
 
@@ -139,7 +129,8 @@
         >>>>>>> origin/master
     </RelativeLayout> <!-- 리스트1 -->
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/fes_2"
         android:layout_width="match_parent"
         android:layout_height="80dp">
@@ -153,14 +144,14 @@
             android:id="@+id/festival_list_img_2"
             android:layout_width="160dp"
             android:layout_height="match_parent" />
-
+<!--
         <ImageView
             android:id="@+id/festival_list_keep_2"
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:layout_margin="8dp"
             android:background="@drawable/keep" />
-
+-->
         <LinearLayout
             android:layout_width="160dp"
             android:layout_height="60dp"
@@ -175,18 +166,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:text="축제"
-                android:textColor="@color/uncheck_dark"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/festival_list_area_2"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:text="지역"
-                android:textColor="@color/uncheck"
-                android:textSize="15dp" />
+                android:textColor="@color/uncheck_dark" />
 
         </LinearLayout>
 
@@ -226,14 +206,14 @@
             android:id="@+id/festival_list_img_3"
             android:layout_width="160dp"
             android:layout_height="match_parent" />
-
+<!--
         <ImageView
             android:id="@+id/festival_list_keep_3"
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:layout_margin="8dp"
             android:background="@drawable/keep" />
-
+-->
         <LinearLayout
             android:layout_width="160dp"
             android:layout_height="60dp"
@@ -248,18 +228,7 @@
                 android:layout_margin="2dp"
                 android:layout_weight="1"
                 android:text="축제"
-                android:textColor="@color/uncheck_dark"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/festival_list_area_3"
-                android:layout_width="150dp"
-                android:layout_height="40dp"
-                android:layout_margin="2dp"
-                android:layout_weight="1"
-                android:text="지역"
-                android:textColor="@color/uncheck"
-                android:textSize="15dp" />
+                android:textColor="@color/uncheck_dark"/>
 
         </LinearLayout>
 

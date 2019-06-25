@@ -219,7 +219,7 @@ public class category extends AppCompatActivity {
         stay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(context, basic_menu.class);
+                intent = new Intent(context, hotel_basic.class);
                 intent.putExtra("activity", "category");
                 intent.putExtra("menu_type", "stay");
                 intent.putExtra("name", name);
