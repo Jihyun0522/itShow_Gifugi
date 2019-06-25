@@ -12,12 +12,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <!-- Splash -->
+        <activity android:name=".Actlist"></activity>
+        <activity android:name=".Foodlist" />
+        <activity android:name=".post" /> <!-- Splash -->
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".first" />
         <activity android:name=".login" />
         <activity android:name=".signup" />
+        <activity android:name=".basic_menu" />
         <activity android:name=".festival_basic" />
         <activity android:name=".hotel_basic" />
+        <activity android:name=".search" />
         <activity android:name=".category" />
         <activity android:name=".MainActivity" />
     </application>
