@@ -79,7 +79,6 @@ public class festival_basic extends AppCompatActivity {
             pw = intent.getStringExtra("pw");
             activity = intent.getStringExtra("activity");
             season = intent.getStringExtra("season");
-//        season = "summer";
 
         fes_1 = (RelativeLayout)findViewById(R.id.fes_1);
         fes_2 = (RelativeLayout)findViewById(R.id.fes_2);
@@ -141,7 +140,7 @@ public class festival_basic extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 season = "spring";
-                season = intent.getStringExtra("season");
+                season = intent.getStringExtra("seoson");
             }
         });
         summer.setOnClickListener(new View.OnClickListener() {
