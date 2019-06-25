@@ -139,29 +139,57 @@ public class festival_basic extends AppCompatActivity {
         spring.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                season = "spring";
-                season = intent.getStringExtra("seoson");
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("season", "spring");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
             }
         });
         summer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                season = "summer";
-                season = intent.getStringExtra("season");
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("season", "summer");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
             }
         });
         fall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                season = "summer";
-                season = intent.getStringExtra("season");
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("season", "fall");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
             }
         });
         winter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                season = "summer";
-                season = intent.getStringExtra("season");
+                intent = new Intent(context, festival_basic.class);
+                intent.putExtra("activity", "main");
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("season", "winter");
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
             }
         });
 

@@ -243,7 +243,7 @@ public class post extends AppCompatActivity {
 
                 Glide.with(context)
                         .load(image)
-                        .override(340,300).centerCrop()
+                        .override(340,250).centerCrop()
                         .into(post_image);
             }
 
