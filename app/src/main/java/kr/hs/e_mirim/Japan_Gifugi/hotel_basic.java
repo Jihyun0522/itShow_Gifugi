@@ -122,7 +122,7 @@ public class hotel_basic extends AppCompatActivity {
         hotel_list_name5 = (TextView)findViewById(R.id.hotel_list_name5);
         hotel_list_name5.setText(hotel_name[4]);
         hotel_list_img5 = (ImageView)findViewById(R.id.hotel_list_img5);
-        hotel_list_img5.setImageResource(R.drawable.gifu);
+        hotel_list_img5.setImageResource(R.drawable.park);
 
         hotel_list_name6 = (TextView)findViewById(R.id.hotel_list_name6);
         hotel_list_name6.setText(hotel_name[5]);
