@@ -1,15 +1,15 @@
 package kr.hs.e_mirim.Japan_Gifugi;
 
 public class experience {
-    String address, explane, price, tel, time, image;
+    String address, explain, price, tel, time, image;
 
     public experience() {
 
     }
 
-    public experience(String address, String explane, String price, String tel, String time, String image) {
+    public experience(String address, String explain, String price, String tel, String time, String image) {
         this.address = address;
-        this.explane = explane;
+        this.explain = explain;
         this.price = price;
         this.tel = tel;
         this.time = time;
@@ -20,8 +20,8 @@ public class experience {
         return address;
     }
 
-    public String getExplane() {
-        return explane;
+    public String getExplain() {
+        return explain;
     }
 
     public String getPrice() {

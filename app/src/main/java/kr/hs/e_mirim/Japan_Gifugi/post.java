@@ -2,6 +2,7 @@ package kr.hs.e_mirim.Japan_Gifugi;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -30,7 +31,7 @@ import java.util.List;
 
 public class post extends AppCompatActivity {
     RelativeLayout h_name_layout, period_layout, time_layout, holiday_layout, price_layout, tel_layout, site_layout;
-    TextView explane_content;
+    TextView explain_content, name_content, content_season;
     TextView address_content, h_name_content, period_content, time_content, holiday_content, price_content, tel_content, site_content;
     ImageView post_image;
 
@@ -119,7 +120,7 @@ public class post extends AppCompatActivity {
                         break;
 
                     case "stay":
-                        intent = new Intent(context, basic_menu.class);
+                        intent = new Intent(context, hotel_basic.class);
                         intent.putExtra("activity", activity);
                         intent.putExtra("menu_type", "stay");
                         break;
@@ -141,7 +142,11 @@ public class post extends AppCompatActivity {
             }
         });
 
-        explane_content = findViewById(R.id.explane);
+        name_content = findViewById(R.id.content_name);
+        name_content.setText(content_name);
+        content_season = findViewById(R.id.content_season);
+
+        explain_content = findViewById(R.id.explain);
         post_image = findViewById(R.id.post_image);
 
         h_name_layout = findViewById(R.id.hotel_name_layout);
@@ -167,6 +172,24 @@ public class post extends AppCompatActivity {
                 holiday_layout.setVisibility(View.GONE);
                 price_layout.setVisibility(View.GONE);
                 site_layout.setVisibility(View.GONE);
+
+                switch (season){
+                    case "spring" :
+                        content_season.setText("春");
+                        break;
+
+                    case "summer" :
+                        content_season.setText("夏");
+                        break;
+
+                    case "fall" :
+                        content_season.setText("秋");
+                        break;
+
+                    case "winter" :
+                        content_season.setText("冬");
+                        break;
+                }
                 break;
 
             case "activity":
@@ -182,9 +205,10 @@ public class post extends AppCompatActivity {
                 price_layout.setVisibility(View.GONE);
                 break;
 
-            case "stay":
+            case "hotel":
                 period_layout.setVisibility(View.GONE);
                 holiday_layout.setVisibility(View.GONE);
+                time_layout.setVisibility(View.GONE);
                 break;
         }
 
@@ -197,9 +221,8 @@ public class post extends AppCompatActivity {
                 switch (type){
                     case "festival":
                         festival festival = dataSnapshot.getValue(festival.class);
-                        explane_content.setText(festival.getExplane());
+                        explain_content.setText(festival.getExplain());
                         address_content.setText(festival.getAddress());
-                        explane_content.setText(festival.getExplane());
                         period_content.setText(festival.getSeason());
                         tel_content.setText(festival.getTel());
                         time_content.setText(festival.getTime());
@@ -210,7 +233,7 @@ public class post extends AppCompatActivity {
 
                     case "activity" :
                         experience experience = dataSnapshot.getValue(experience.class);
-                        explane_content.setText(experience.getExplane());
+                        explain_content.setText(experience.getExplain());
                         address_content.setText(experience.getAddress());
                         time_content.setText(experience.getTime());
                         price_content.setText(experience.getPrice());
@@ -220,7 +243,7 @@ public class post extends AppCompatActivity {
 
                     case "food":
                         food food = dataSnapshot.getValue(food.class);
-                        explane_content.setText(food.getExplane());
+                        explain_content.setText(food.getExplain());
                         address_content.setText(food.getAddress());
                         holiday_content.setText(food.getClosed());
                         site_content.setText(food.getSite());
@@ -229,12 +252,12 @@ public class post extends AppCompatActivity {
                         image = food.getImage();
                         break;
 
-                    case "stay":
+                    case "hotel":
                         hotel hotel = dataSnapshot.getValue(hotel.class);
-                        explane_content.setText(hotel.getExplain());
+                        explain_content.setText(hotel.getExplain());
                         address_content.setText(hotel.getAddress());
                         site_content.setText(hotel.getLink());
-                        h_name_content.setText(hotel.getName());
+                        h_name_content.setText(content_name);
                         price_content.setText(hotel.getPrice());
                         tel_content.setText(hotel.getTel());
                         image = hotel.getImage();
@@ -245,6 +268,15 @@ public class post extends AppCompatActivity {
                         .load(image)
                         .override(340,250).centerCrop()
                         .into(post_image);
+
+                site_content.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(Intent.ACTION_VIEW);
+                        intent.setData(Uri.parse(site_content.getText().toString()));
+                        startActivity(intent);
+                    }
+                });
             }
 
             @Override

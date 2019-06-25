@@ -295,6 +295,63 @@ public class festival_basic extends AppCompatActivity {
                 break;
         }//switch
 
+        fes_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "festival_" + season);
+                intent.putExtra("season", season);
+                intent.putExtra("content_name", festival_list_name_1.getText().toString());
+                intent.putExtra("type", "festival");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        fes_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "festival_" + season);
+                intent.putExtra("season", season);
+                intent.putExtra("content_name", festival_list_name_2.getText().toString());
+                intent.putExtra("type", "festival");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        fes_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "festival_" + season);
+                intent.putExtra("season", season);
+                intent.putExtra("content_name", festival_list_name_3.getText().toString());
+                intent.putExtra("type", "festival");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
         /*
         initDatabase();
 

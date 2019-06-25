@@ -30,7 +30,10 @@ public class basic_menu extends AppCompatActivity {
     LinearLayout list_view;
 
     LinearLayout layout_act;
+    LinearLayout layout_act1, layout_act2;
+
     LinearLayout layout_food;
+    LinearLayout layout_food1, layout_food2, layout_food3, layout_food4, layout_food5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +51,15 @@ public class basic_menu extends AppCompatActivity {
         menu_text = findViewById(R.id.top_view_text);
 
         layout_act = findViewById(R.id.layout_act_all);
+        layout_act1 = findViewById(R.id.layout_act1);
+        layout_act2 = findViewById(R.id.layout_act2);
+
         layout_food = findViewById(R.id.layout_food_all);
+        layout_food1 = findViewById(R.id.layout_food1);
+        layout_food2 = findViewById(R.id.layout_food2);
+        layout_food3 = findViewById(R.id.layout_food3);
+        layout_food4 = findViewById(R.id.layout_food4);
+        layout_food5 = findViewById(R.id.layout_food5);
 
         switch (menu){
             case "sightseeing":
@@ -97,6 +108,139 @@ public class basic_menu extends AppCompatActivity {
         });
 
         list_view = findViewById(R.id.list_view);
+
+        layout_act1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "sightseeing");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", "게로 온천");
+                intent.putExtra("type", "activity");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        layout_act2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "sightseeing");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", "식품샘플 제작");
+                intent.putExtra("type", "activity");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        layout_food1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "food");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", "가와라야");
+                intent.putExtra("type", "food");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        layout_food2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "food");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", "반쇼칸");
+                intent.putExtra("type", "food");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        layout_food3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "food");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", "일본 요리 히라이");
+                intent.putExtra("type", "food");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        layout_food4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "food");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", "코라쿠소");
+                intent.putExtra("type", "food");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        layout_food5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "food");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", "히다소");
+                intent.putExtra("type", "food");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
 
     }
 }

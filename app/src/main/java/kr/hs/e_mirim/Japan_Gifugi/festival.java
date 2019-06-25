@@ -1,15 +1,15 @@
 package kr.hs.e_mirim.Japan_Gifugi;
 
 public class festival {
-    String address, explane, season, tel, time, image;
+    String address, explain, season, tel, time, image;
 
     public festival() {
 
     }
 
-    public festival(String address, String explane, String season, String tel, String time, String imgae) {
+    public festival(String address, String explain, String season, String tel, String time, String imgae) {
         this.address = address;
-        this.explane = explane;
+        this.explain = explain;
         this.season = season;
         this.tel = tel;
         this.time = time;
@@ -20,8 +20,8 @@ public class festival {
         return address;
     }
 
-    public String getExplane() {
-        return explane;
+    public String getExplain() {
+        return explain;
     }
 
     public String getSeason() {

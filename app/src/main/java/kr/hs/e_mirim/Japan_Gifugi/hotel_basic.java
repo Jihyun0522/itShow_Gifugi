@@ -23,7 +23,7 @@ public class hotel_basic extends AppCompatActivity {
     ImageView hotel_list_img1, hotel_list_img2, hotel_list_img3, hotel_list_img4, hotel_list_img5, hotel_list_img6;
     TextView hotel_list_name1, hotel_list_name2, hotel_list_name3, hotel_list_name4, hotel_list_name5, hotel_list_name6;
 
-    LinearLayout hot_1, hot_2, hot_3;
+    LinearLayout hot_1, hot_2, hot_3, hot_4, hot_5, hot_6;
 
     LinearLayout hotel;
 
@@ -51,6 +51,9 @@ public class hotel_basic extends AppCompatActivity {
         hot_1 = (LinearLayout)findViewById(R.id.hot_1);
         hot_2 = (LinearLayout)findViewById(R.id.hot_2);
         hot_3 = (LinearLayout)findViewById(R.id.hot_3);
+        hot_4 = (LinearLayout)findViewById(R.id.hot_4);
+        hot_5 = (LinearLayout)findViewById(R.id.hot_5);
+        hot_6 = (LinearLayout)findViewById(R.id.hot_6);
 
         menu_text = (TextView) findViewById(R.id.top_view_text);
         menu_text.setText("STAY");
@@ -129,6 +132,120 @@ public class hotel_basic extends AppCompatActivity {
         hotel_list_img6 = (ImageView)findViewById(R.id.hotel_list_img6);
         hotel_list_img6.setImageResource(R.drawable.harmonie);
 
+
+        hot_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "stay");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", hotel_list_name1.getText().toString());
+                intent.putExtra("type", "hotel");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        hot_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "stay");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", hotel_list_name2.getText().toString());
+                intent.putExtra("type", "hotel");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        hot_3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "stay");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", hotel_list_name3.getText().toString());
+                intent.putExtra("type", "hotel");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        hot_4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "stay");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", hotel_list_name4.getText().toString());
+                intent.putExtra("type", "hotel");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        hot_5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "stay");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", hotel_list_name5.getText().toString());
+                intent.putExtra("type", "hotel");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
+
+        hot_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(context, post.class);
+                intent.putExtra("name", name);
+                intent.putExtra("email", email);
+                intent.putExtra("pw", pw);
+                intent.putExtra("activity", activity);
+                intent.putExtra("layout", "stay");
+                intent.putExtra("season", "--");
+                intent.putExtra("content_name", hotel_list_name6.getText().toString());
+                intent.putExtra("type", "hotel");
+
+                startActivity(intent);
+                overridePendingTransition(0, 0);
+                finish();
+            }
+        });
 
     }//oncreate
 }

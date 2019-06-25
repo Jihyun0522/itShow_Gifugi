@@ -1,16 +1,16 @@
 package kr.hs.e_mirim.Japan_Gifugi;
 
 public class food {
-    String address, closed, explane, site, tel, time, image;
+    String address, closed, explain, site, tel, time, image;
 
     public food() {
 
     }
 
-    public food(String address, String closed, String explane, String site, String tel, String time, String image) {
+    public food(String address, String closed, String explain, String site, String tel, String time, String image) {
         this.address = address;
         this.closed = closed;
-        this.explane = explane;
+        this.explain = explain;
         this.site = site;
         this.tel = tel;
         this.time = time;
@@ -25,8 +25,8 @@ public class food {
         return closed;
     }
 
-    public String getExplane() {
-        return explane;
+    public String getExplain() {
+        return explain;
     }
 
     public String getSite() {
