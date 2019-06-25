@@ -4,125 +4,166 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Foodlist"
     android:orientation="vertical"
-    >
+    android:id="@+id/layout_food_all"
+    android:background="@drawable/noting">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-        <RelativeLayout
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <LinearLayout
                 android:id="@+id/layout_food1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="horizontal"
+                android:layout_height="80dp"
                 android:gravity="center_vertical"
-                >
+                android:orientation="horizontal"
+                android:padding="8dp">
+
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/food1"
-                    />
+                    android:src="@drawable/food1" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="가와라야"
-                    />
+                    android:textColor="@color/uncheck_dark"/>
+
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp"
+                android:background="@color/uncheck" />
 
             <LinearLayout
                 android:id="@+id/layout_food2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="horizontal"
+                android:layout_height="80dp"
                 android:gravity="center_vertical"
-                android:layout_below="@+id/layout_food1"
-                >
+                android:orientation="horizontal"
+                android:padding="8dp">
+
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/food2"
-                    />
+                    android:src="@drawable/food2" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="반쇼칸"
-                    />
+                    android:textColor="@color/uncheck_dark"/>
+
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp"
+                android:background="@color/uncheck" />
 
             <LinearLayout
                 android:id="@+id/layout_food3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="horizontal"
+                android:layout_height="80dp"
                 android:gravity="center_vertical"
-                android:layout_below="@id/layout_food2"
-                >
+                android:orientation="horizontal"
+                android:padding="8dp">
+
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/food3"
-                    />
+                    android:src="@drawable/food3" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="일본 요리 히라이"
-                    />
+                    android:textColor="@color/uncheck_dark"/>
+
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp"
+                android:background="@color/uncheck" />
 
             <LinearLayout
                 android:id="@+id/layout_food4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="horizontal"
+                android:layout_height="80dp"
                 android:gravity="center_vertical"
-                android:layout_below="@+id/layout_food3"
-                >
+                android:orientation="horizontal"
+                android:padding="8dp">
+
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/food4"
-                    />
+                    android:src="@drawable/food4" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="코라쿠소"
-                    />
+                    android:textColor="@color/uncheck_dark"/>
+
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp"
+                android:background="@color/uncheck" />
 
             <LinearLayout
                 android:id="@+id/layout_food5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="horizontal"
+                android:layout_height="80dp"
                 android:gravity="center_vertical"
-                android:layout_below="@+id/layout_food4"
-                >
+                android:orientation="horizontal"
+                android:padding="8dp">
+
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/food5"
-                    />
+                    android:src="@drawable/food5" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="히다소"
-                    />
+                    android:textColor="@color/uncheck_dark"/>
+
             </LinearLayout>
-        </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp"
+                android:background="@color/uncheck" />
+
+        </LinearLayout>
+
     </ScrollView>
+
 </LinearLayout>

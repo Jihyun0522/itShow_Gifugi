@@ -4,55 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Actlist">
+    android:id="@+id/layout_act_all"
+    android:background="@drawable/noting">
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <RelativeLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
             <LinearLayout
                 android:id="@+id/layout_act1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="horizontal"
+                android:layout_height="80dp"
                 android:gravity="center_vertical"
-                >
+                android:orientation="horizontal"
+                android:padding="8dp">
+
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/act1"
-                    />
+                    android:src="@drawable/act1" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="게로 온천"
-                    />
+                    android:textColor="@color/uncheck_dark"/>
+
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp"
+                android:background="@color/uncheck" />
 
             <LinearLayout
                 android:id="@+id/layout_act2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
+                android:layout_height="80dp"
                 android:layout_below="@+id/layout_act1"
-                >
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
                 <ImageView
                     android:layout_width="120dp"
                     android:layout_height="90dp"
-                    android:src="@drawable/act2"
-                    />
+                    android:src="@drawable/act2" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:text="식품샘플 제작"
-                   />
+                    android:textColor="@color/uncheck_dark"/>
+
             </LinearLayout>
-        </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="1dp"
+                android:background="@color/uncheck" />
+
+        </LinearLayout>
+
     </ScrollView>
+
 </LinearLayout>

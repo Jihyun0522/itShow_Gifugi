@@ -74,7 +74,7 @@
 
             <include
                 android:id="@+id/main_card1"
-                layout="@layout/card_main"/>
+                layout="@layout/card_main" />
 
         </RelativeLayout>
 

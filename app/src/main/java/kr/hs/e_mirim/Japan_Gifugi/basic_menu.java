@@ -29,6 +29,9 @@ public class basic_menu extends AppCompatActivity {
     LinearLayout card_view;
     LinearLayout list_view;
 
+    LinearLayout layout_act;
+    LinearLayout layout_food;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,17 +47,18 @@ public class basic_menu extends AppCompatActivity {
 
         menu_text = findViewById(R.id.top_view_text);
 
+        layout_act = findViewById(R.id.layout_act_all);
+        layout_food = findViewById(R.id.layout_food_all);
+
         switch (menu){
             case "sightseeing":
                 menu_text.setText("EXPERIENCE");
-                break;
-
-            case "stay":
-                menu_text.setText("STAY");
+                layout_food.setVisibility(View.GONE);
                 break;
 
             case "food":
                 menu_text.setText("FOOD");
+                layout_act.setVisibility(View.GONE);
                 break;
         }
 

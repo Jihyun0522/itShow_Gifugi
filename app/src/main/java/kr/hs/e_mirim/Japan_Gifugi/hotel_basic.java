@@ -23,7 +23,7 @@ public class hotel_basic extends AppCompatActivity {
     ImageView hotel_list_img1, hotel_list_img2, hotel_list_img3, hotel_list_img4, hotel_list_img5, hotel_list_img6;
     TextView hotel_list_name1, hotel_list_name2, hotel_list_name3, hotel_list_name4, hotel_list_name5, hotel_list_name6;
 
-    RelativeLayout hot_1, hot_2, hot_3;
+    LinearLayout hot_1, hot_2, hot_3;
 
     LinearLayout hotel;
 
@@ -48,9 +48,9 @@ public class hotel_basic extends AppCompatActivity {
         pw = intent.getStringExtra("pw");
         activity = intent.getStringExtra("activity");
 
-        hot_1 = (RelativeLayout)findViewById(R.id.hot_1);
-        hot_2 = (RelativeLayout)findViewById(R.id.hot_2);
-        hot_3 = (RelativeLayout)findViewById(R.id.hot_3);
+        hot_1 = (LinearLayout)findViewById(R.id.hot_1);
+        hot_2 = (LinearLayout)findViewById(R.id.hot_2);
+        hot_3 = (LinearLayout)findViewById(R.id.hot_3);
 
         menu_text = (TextView) findViewById(R.id.top_view_text);
         menu_text.setText("STAY");
