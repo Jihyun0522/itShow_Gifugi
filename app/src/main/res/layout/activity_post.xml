@@ -38,7 +38,7 @@
                 android:textColor="#ffffff"
                 android:textSize="20pt"
                 android:layout_marginLeft="25dp"
-                android:layout_marginTop="68dp"
+                android:layout_marginTop="65dp"
                 android:layout_below="@+id/close"/>
                 <!--android:background="#5909462b"-->
 
@@ -49,7 +49,8 @@
                 android:textColor="#ffffff"
                 android:textSize="10pt"
                 android:layout_marginLeft="15dp"
-                android:layout_marginTop="4dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="2dp"
                 android:layout_below="@+id/content_season"
                 android:background="#5909462b"
                 android:text="name"/>
@@ -70,18 +71,25 @@
                 android:orientation="vertical"
                 android:padding="10dp">
 
-                <TextView
-                    android:id="@+id/explain"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
                     android:background="@drawable/oval_post"
-                    android:padding="5dp"
-                    android:paddingTop="10dp"
-                    android:text="소개"
-                    android:textAlignment="center"
-                    android:textColor="@color/main"
-                    android:textSize="7pt"/>
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:id="@+id/explain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="4dp"
+                        android:padding="5dp"
+                        android:paddingTop="10dp"
+                        android:text="소개"
+                        android:textAlignment="center"
+                        android:textColor="@color/main"
+                        android:textSize="7pt"/>
+
+                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
