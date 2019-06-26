@@ -14,7 +14,7 @@
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <!--<activity android:name=".Actlist"></activity>
         <activity android:name=".Foodlist" />-->
-        <activity android:name=".post" /> <!-- Splash -->
+        <!-- Splash -->
         <activity
             android:name=".SplashActivity"
             android:screenOrientation="portrait"
@@ -34,6 +34,8 @@
         <activity android:name=".search" />
         <activity android:name=".category" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".post"
+            android:windowSoftInputMode="adjustResize"/>
     </application>
 
 </manifest>
