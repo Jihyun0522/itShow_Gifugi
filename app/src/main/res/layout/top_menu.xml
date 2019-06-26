@@ -29,7 +29,7 @@
             android:background="@drawable/noting"
             android:text="HOME"
             android:textColor="@color/uncheck"
-            android:textSize="14dp" />
+            android:textSize="7pt" />
 
         <Button
             android:id="@+id/btn_category"
@@ -41,7 +41,7 @@
             android:background="@drawable/noting"
             android:text="CATEGORY"
             android:textColor="@color/uncheck"
-            android:textSize="14dp" />
+            android:textSize="7pt" />
 
     </LinearLayout>
 

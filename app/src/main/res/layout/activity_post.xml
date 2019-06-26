@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/linear2"
                 android:orientation="vertical"
-                android:padding="15dp">
+                android:padding="7dp">
 
                 <RelativeLayout
                     android:id="@+id/hotel_name_layout"
