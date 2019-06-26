@@ -36,9 +36,11 @@
                 android:layout_marginLeft="35dp"
                 android:layout_marginRight="20dp"
                 android:hint="검색어를 입력하세요."
+                android:textColorHint="@color/uncheck_dark"
                 android:textSize="15dp"
                 android:singleLine="true"
-                android:lines="1"/>
+                android:lines="1"
+                android:textColor="@color/uncheck_dark"/>
 
         </RelativeLayout>
 

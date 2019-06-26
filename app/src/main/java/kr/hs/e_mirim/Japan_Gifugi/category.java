@@ -452,5 +452,8 @@ public class category extends AppCompatActivity {
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        //super.onBackPressed();
+    }
 }
